@@ -15,8 +15,9 @@ We’ve got a couple of principles that should be clear to you:
 - Gutters are fixed
 - Two spaces between two columns make a gutter
 - The space between a column and a row make a gutter
+- With great power, comes great responsibility. Only include what you need!
 
-# Grid
+# grid
 Let's start with a grid of 12 columns. And while we're on it, let's split them up in 's', 'm' and 'l' layouts.
 
 ```scss
@@ -134,3 +135,135 @@ This way the elements will be at full width for `s`, they're equally divided for
 ```
 
 You wanna get fancy and use em-based media-queries? Sure, it's your layout.
+
+# properties
+Columns are not the only flexible pieces in the puzzle of RWD. Often you find yourself setting properties (like margins, paddings, etc) that need different sizes for different layouts. You can do this with specific CSS, but how about this:
+
+```scss
+@import 'T-1000';
+
+@media only screen and (max-width: 399px) {
+  @include properties(2px, (margin, padding));
+}
+
+@media only screen and (min-width: 400px) {
+  @include properties(5px, (margin, padding));
+}
+
+@media only screen and (min-width: 1000px) {
+  @include properties(5px, (margin, padding));
+}
+
+@media only screen and (min-width: 1000px) {
+  @include properties(10px, (margin, padding));
+}
+```
+
+This will generate classes with appropriate margins:
+
+```css
+@media only screen and (max-width: 399px) {
+  .margin { margin: 2px; }
+  .padding { padding: 2px; }
+}
+
+@media only screen and (min-width: 400px) {
+  .margin { margin: 5px; }
+  .padding { padding: 5px; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .margin { margin: 5px; }
+  .padding { padding: 5px; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .margin { margin: 10px; }
+  .padding { padding: 10px; }
+}
+```
+
+When you use these classes instead of specific CSS you'll notice that things get more consistent, especially in combination with the grid. But of course these classes aren't enough for all cases. That's why we've got some extra onces, which are still in balance with the overall sizing of things:
+
+```scss
+@media only screen and (max-width: 399px) {
+  @include properties(2px, (margin, padding), double);
+}
+
+@media only screen and (min-width: 400px) {
+  @include properties(5px, (margin, padding), double);
+}
+
+@media only screen and (min-width: 1000px) {
+  @include properties(5px, (margin, padding), double);
+}
+
+@media only screen and (min-width: 1000px) {
+  @include properties(10px, (margin, padding), double);
+}
+```
+
+```css
+@media only screen and (max-width: 399px) {
+  .margin-double { margin: 4px; }
+  .padding-double { padding: 4px; }
+}
+
+@media only screen and (min-width: 400px) {
+  .margin-double { margin: 10px; }
+  .padding-double { padding: 10px; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .margin-double { margin: 10px; }
+  .padding-double { padding: 10px; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .margin-double { margin: 20px; }
+  .padding-double { padding: 20px; }
+}
+```
+
+`triple` and `half` are also available. In my experience: When you need any more or less than this, there's probably something wrong with the design. When you experience a desperate need for more, file a bug and let me know.
+
+# properties-for-layout
+When you're in a situation where you only want some margin in a specific layout, use `properties-for-layout`:
+
+```scss
+@media only screen and (max-width: 399px) {
+  @include properties-for-layout(s, 2px, margin);
+}
+
+@media only screen and (min-width: 400px) {
+  @include properties-for-layout(m, 5px, margin);
+}
+
+@media only screen and (min-width: 1000px) {
+  @include properties-for-layout(l, 5px, margin);
+}
+
+@media only screen and (min-width: 1000px) {
+  @include properties-for-layout(xl, 10px, margin);
+}
+```
+
+```css
+@media only screen and (max-width: 399px) {
+  .s-margin { margin: 2px; }
+}
+
+@media only screen and (min-width: 400px) {
+  .m-margin { margin: 5px; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .l-margin { margin: 5px; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .xl-margin { margin: 10px; }
+}
+```
+
+You can use `double` / `triple` / `half` here as well, like this: `@include properties-for-layout(m, 5px, margin, double)`.
