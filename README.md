@@ -17,7 +17,9 @@ We’ve got a couple of principles that should be clear to you:
 - The space between a column and a row make a gutter
 - With great power, comes great responsibility. Only include what you need!
 
-# grid
+# Mixins
+
+## grid
 Let's start with a grid of 12 columns. And while we're on it, let's split them up in 's', 'm' and 'l' layouts.
 
 ```scss
@@ -136,7 +138,8 @@ This way the elements will be at full width for `s`, they're equally divided for
 
 You wanna get fancy and use em-based media-queries? Sure, it's your layout.
 
-# properties
+
+## properties
 Columns are not the only flexible pieces in the puzzle of RWD. Often you find yourself setting properties (like margins, paddings, etc) that need different sizes for different layouts. You can do this with specific CSS, but how about this:
 
 ```scss
@@ -227,7 +230,8 @@ When you use these classes instead of specific CSS you'll notice that things get
 
 `triple` and `half` are also available. In my experience: When you need any more or less than this, there's probably something wrong with the design. When you experience a desperate need for more, file a bug and let me know.
 
-# properties-for-layout
+
+## properties-for-layout
 When you're in a situation where you only want some margin in a specific layout, use `properties-for-layout`:
 
 ```scss
@@ -266,4 +270,8 @@ When you're in a situation where you only want some margin in a specific layout,
 }
 ```
 
-You can use `double` / `triple` / `half` here as well, like this: `@include properties-for-layout(m, 5px, margin, double)`.
+You can use `double` / `triple` / `half` here as well, like this:
+
+```
+@include properties-for-layout(m, 5px, margin, double)
+```
