@@ -15,11 +15,21 @@ module.exports = function(grunt) {
     },
 
     markdown: {
-      readme: {
+      demo: {
         src: 'README.md',
         dest: 'demo/dist/index.html',
         options: {
           template: 'demo/layout.html'
+        }
+      }
+    },
+
+    sass: {
+      demo: {
+        src: 'demo/demo.scss',
+        dest: 'demo/dist/demo.css',
+        options: {
+          style: 'compressed'
         }
       }
     },
@@ -42,8 +52,9 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-jasmine-node');
   grunt.loadNpmTasks('grunt-markdown');
 
-  grunt.registerTask('default', ['jasmine_node', 'concat']);
+  grunt.registerTask('default', ['jasmine_node', 'concat', 'sass', 'markdown']);
 };
