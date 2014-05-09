@@ -11,7 +11,7 @@ We’ve got a couple of principles that should be clear to you:
 - Put columns in a row
 - Columns are flexible
 - Gutters are fixed
-- Two spaces between two columns make a gutter
+- The space between two columns make a gutter
 - The space between a column and a row make a gutter
 - With great power, comes great responsibility. Only include what you need!
 

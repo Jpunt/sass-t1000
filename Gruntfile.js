@@ -14,22 +14,29 @@ module.exports = function(grunt) {
       all: ['spec/']
     },
 
-    markdown: {
+    sass: {
       demo: {
-        src: 'README.md',
-        dest: 'demo/dist/index.html',
+        src: 'demo/stylesheets/demo.scss',
+        dest: 'demo/dist/demo.css',
         options: {
-          template: 'demo/layout.html'
+          style: 'compressed'
         }
       }
     },
 
-    sass: {
+    copy: {
       demo: {
-        src: 'demo/demo.scss',
-        dest: 'demo/dist/demo.css',
+        src: 'demo/index.html',
+        dest: 'demo/dist/index.html'
+      }
+    },
+
+    markdown: {
+      demo: {
+        src: 'README.md',
+        dest: 'demo/markdown/readme.html',
         options: {
-          style: 'compressed'
+          template: 'demo/markdown/layout.html'
         }
       }
     },
@@ -43,9 +50,13 @@ module.exports = function(grunt) {
         files: 'spec/**/*',
         tasks: ['jasmine_node']
       },
-      markdown: {
-        files: ['README.md', 'demo/layout.html'],
-        tasks: ['markdown']
+      sass: {
+        files: ['demo/**/*.scss'],
+        tasks: ['sass:demo']
+      },
+      copy: {
+        files: ['demo/**/*.html'],
+        tasks: ['copy:demo']
       }
     }
   });
@@ -53,8 +64,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-jasmine-node');
   grunt.loadNpmTasks('grunt-markdown');
 
-  grunt.registerTask('default', ['jasmine_node', 'concat', 'sass', 'markdown']);
+  grunt.registerTask('default', ['jasmine_node', 'concat', 'sass', 'copy']);
 };

@@ -1,0 +1,95 @@
+@import 'reset.css';
+@import '../../dist/T-1000.scss';
+
+/*
+ * GRID
+ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 1024px;
+}
+
+@include reset-properties((padding));
+
+@media only screen and (max-width:599px) {
+  $space: 5px;
+  @include grid(s, 2, $space);
+  @include properties($space, (padding), double);
+}
+
+@media only screen and (min-width:600px) {
+  .row {
+    width: 98%;
+  }
+
+  $space: 10px;
+  @include grid(m, 6, $space);
+  @include properties($space, (padding), double);
+}
+
+@media only screen and (min-width:1000px) {
+  .row {
+    width: 90%;
+  }
+
+  $space: 15px;
+  @include grid(l, 12, $space);
+  @include properties($space, (padding), double);
+}
+
+/*
+ * Type
+ */
+
+body {
+  font-size: 100%;
+  font-family: Helvetica, sans-serif;
+}
+
+h1 {
+  padding: 1em 0;
+  font-size: 4em;
+  text-align: center;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+code {
+  font-size: 1em;
+  padding: 0.2em 0.4em
+}
+
+/*
+ * Colors
+ */
+body {
+  background-color: #f0f0f0;
+  color: #333;
+
+  code {
+    background-color: #e4e4e4;
+  }
+}
+
+.bg-light {
+  background-color: #fdfdfd
+}
+
+.row {
+  border-bottom: 1px solid #e4e4e4;
+}
+
+/*
+ * Code
+ */
+.gist {
+  margin: 1em 0;
+}
