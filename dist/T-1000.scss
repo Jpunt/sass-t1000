@@ -21,3 +21,59 @@
     }
   }
 }
+
+@mixin properties($padding, $properties, $scale:false) {
+  @each $property in $properties {
+    @if($scale == false) {
+      .#{$property} {
+        #{$property}: $padding;
+      }
+    }
+
+    @if($scale == double) {
+      .#{$property}-double {
+        #{$property}: ($padding * 2);
+      }
+    }
+
+    @if($scale == half) {
+      .#{$property}-half {
+        #{$property}: ($padding / 2);
+      }
+    }
+
+    @if($scale == triple) {
+      .#{$property}-triple {
+        #{$property}: ($padding * 3);
+      }
+    }
+  }
+}
+
+@mixin properties-for-layout($layout, $padding, $properties, $scale:false) {
+  @each $property in $properties {
+    @if($scale == false) {
+      .#{$layout}-#{$property} {
+        #{$property}: $padding;
+      }
+    }
+
+    @if($scale == double) {
+      .#{$layout}-#{$property}-double {
+        #{$property}: ($padding * 2);
+      }
+    }
+
+    @if($scale == half) {
+      .#{$layout}-#{$property}-half {
+        #{$property}: ($padding / 2);
+      }
+    }
+
+    @if($scale == triple) {
+      .#{$layout}-#{$property}-triple {
+        #{$property}: ($padding * 3);
+      }
+    }
+  }
+}

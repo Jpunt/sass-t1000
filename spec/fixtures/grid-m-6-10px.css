@@ -1,0 +1,33 @@
+.row {
+  padding: 10px;
+}
+
+.m-1 {
+  width: 16.66667%;
+  padding: 10px;
+}
+
+.m-2 {
+  width: 33.33333%;
+  padding: 10px;
+}
+
+.m-3 {
+  width: 50%;
+  padding: 10px;
+}
+
+.m-4 {
+  width: 66.66667%;
+  padding: 10px;
+}
+
+.m-5 {
+  width: 83.33333%;
+  padding: 10px;
+}
+
+.m-6 {
+  width: 100%;
+  padding: 10px;
+}

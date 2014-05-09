@@ -17,7 +17,11 @@ module.exports = function(grunt) {
     watch: {
       concat: {
         files: '<%= concat.dist.src %>',
-        tasks: ['concat:dist']
+        tasks: ['jasmine_node', 'concat:dist']
+      },
+      test: {
+        files: 'spec/**/*',
+        tasks: ['jasmine_node']
       }
     }
   });
