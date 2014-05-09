@@ -1,8 +1,6 @@
 sass-t-1000-grid
 ================
 
-![T-1000](http://vonlitch.files.wordpress.com/2012/10/t1000.jpg)
-
 **Yes, this is another responsive grid system.** There are a lot of them these days, but as with a lot of things: they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.
 
 **No, this is not another responsive grid system.** It’s more a library. You build the grid yourself, using SASS-mixins. This way you’re free to choose the kind of media-queries or amount of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.
