@@ -1,0 +1,23 @@
+
+@mixin row($padding) {
+  .row {
+    padding: $padding;
+  }
+}
+
+@mixin column($max_columns, $num_columns, $padding) {
+  width: (100% / $max_columns) * $num_columns;
+  padding: $padding;
+}
+
+@mixin grid($layout, $columns, $padding) {
+  // .row
+  @include row($padding);
+
+  // .m-2, .xl-6, etc
+  @for $i from 1 through $columns {
+    .#{$layout}-#{$i} {
+      @include column($columns, $i, $padding);
+    }
+  }
+}
