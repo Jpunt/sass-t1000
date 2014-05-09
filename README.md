@@ -103,7 +103,7 @@ So, if you have some elements that you'd like to layout, you can do things like 
 </div>
 ```
 
-This way the elements will be at full width for `s`, they're equally divided for `l` layout and something special `m`. But c'mon, 12 columns and a `10px` gutter for small screens? That's insane. Let's clean that up and give large screens a little bit more air as well:
+This way the elements will be at full width for `s`, they're equally divided for `l` layout and something special `m`. But c'mon, 12 columns and such a large gutter for small screens? That's insane. Let's clean that up and give large screens a little bit more air as well:
 
 ```scss
 @import 'T-1000';
