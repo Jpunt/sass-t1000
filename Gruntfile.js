@@ -14,6 +14,16 @@ module.exports = function(grunt) {
       all: ['spec/']
     },
 
+    markdown: {
+      readme: {
+        src: 'README.md',
+        dest: 'example/readme.html',
+        options: {
+          template: 'example/index.html'
+        }
+      }
+    },
+
     watch: {
       concat: {
         files: '<%= concat.dist.src %>',
@@ -22,6 +32,10 @@ module.exports = function(grunt) {
       test: {
         files: 'spec/**/*',
         tasks: ['jasmine_node']
+      },
+      markdown: {
+        files: ['README.md', 'example/template.html'],
+        tasks: ['markdown']
       }
     }
   });
@@ -29,6 +43,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jasmine-node');
+  grunt.loadNpmTasks('grunt-markdown');
 
   grunt.registerTask('default', ['jasmine_node', 'concat']);
 };
