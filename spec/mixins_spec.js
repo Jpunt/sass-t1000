@@ -16,44 +16,44 @@ function expected(fileName) {
 describe('Mixins', function() {
 
   describe('grid', function() {
-    it('compiles grid(s, 2, 5px)', function() {
+    it('grid(s, 2, 5px)', function() {
       expect(compiled('grid-s-2-5px.scss')).toEqual(expected('grid-s-2-5px.css'));
     });
 
-    it('compiles grid(m, 6, 10px)', function() {
+    it('grid(m, 6, 10px)', function() {
       expect(compiled('grid-m-6-10px.scss')).toEqual(expected('grid-m-6-10px.css'));
     });
   });
 
   describe('properties', function() {
     describe('single', function() {
-      it('compiles properties(5px, margin)', function() {
+      it('properties(5px, margin)', function() {
         expect(compiled('properties-5px-margin.scss')).toEqual(expected('properties-5px-margin.css'));
       });
 
-      it('compiles properties(10px, margin)', function() {
+      it('properties(10px, margin)', function() {
         expect(compiled('properties-10px-margin.scss')).toEqual(expected('properties-10px-margin.css'));
       });
 
-      it('compiles properties(5px, (margin, padding))', function() {
+      it('properties(5px, (margin, padding))', function() {
         expect(compiled('properties-5px-margin-padding.scss')).toEqual(expected('properties-5px-margin-padding.css'));
       });
     });
 
     describe('double', function() {
-      it('compiles properties(5px, margin, double)', function() {
+      it('properties(5px, margin, double)', function() {
         expect(compiled('properties-5px-margin-double.scss')).toEqual(expected('properties-5px-margin-double.css'));
       });
     });
 
     describe('half', function() {
-      it('compiles properties(5px, margin, half)', function() {
+      it('properties(5px, margin, half)', function() {
         expect(compiled('properties-5px-margin-half.scss')).toEqual(expected('properties-5px-margin-half.css'));
       });
     });
 
     describe('triple', function() {
-      it('compiles properties(5px, margin, triple)', function() {
+      it('properties(5px, margin, triple)', function() {
         expect(compiled('properties-5px-margin-triple.scss')).toEqual(expected('properties-5px-margin-triple.css'));
       });
     });
@@ -61,37 +61,37 @@ describe('Mixins', function() {
 
   describe('properties-for-layout', function() {
     describe('single', function() {
-      it('compiles properties-for-layout(s, 5px, margin)', function() {
+      it('properties-for-layout(s, 5px, margin)', function() {
         expect(compiled('properties-for-layout-s-5px-margin.scss')).toEqual(expected('properties-for-layout-s-5px-margin.css'));
       });
 
-      it('compiles properties-for-layout(s, 10px, margin)', function() {
+      it('properties-for-layout(s, 10px, margin)', function() {
         expect(compiled('properties-for-layout-s-10px-margin.scss')).toEqual(expected('properties-for-layout-s-10px-margin.css'));
       });
 
-      it('compiles properties-for-layout(s, 5px, (margin, padding))', function() {
+      it('properties-for-layout(s, 5px, (margin, padding))', function() {
         expect(compiled('properties-for-layout-s-5px-margin.scss')).toEqual(expected('properties-for-layout-s-5px-margin.css'));
       });
 
-      it('compiles properties-for-layout(m, 5px, margin)', function() {
+      it('properties-for-layout(m, 5px, margin)', function() {
         expect(compiled('properties-for-layout-m-5px-margin.scss')).toEqual(expected('properties-for-layout-m-5px-margin.css'));
       });
     });
 
     describe('double', function() {
-      it('compiles properties-for-layout(5px, margin, double)', function() {
+      it('properties-for-layout(5px, margin, double)', function() {
         expect(compiled('properties-for-layout-s-5px-margin-double.scss')).toEqual(expected('properties-for-layout-s-5px-margin-double.css'));
       });
     });
 
     describe('half', function() {
-      it('compiles properties-for-layout-s-for-layout(5px, margin, half)', function() {
+      it('properties-for-layout-s-for-layout(5px, margin, half)', function() {
         expect(compiled('properties-for-layout-s-5px-margin-half.scss')).toEqual(expected('properties-for-layout-s-5px-margin-half.css'));
       });
     });
 
     describe('triple', function() {
-      it('compiles properties-for-layout-s-for-layout(5px, margin, triple)', function() {
+      it('properties-for-layout-s-for-layout(5px, margin, triple)', function() {
         expect(compiled('properties-for-layout-s-5px-margin-triple.scss')).toEqual(expected('properties-for-layout-s-5px-margin-triple.css'));
       });
     });
