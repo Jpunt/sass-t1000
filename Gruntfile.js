@@ -17,9 +17,9 @@ module.exports = function(grunt) {
     markdown: {
       readme: {
         src: 'README.md',
-        dest: 'example/readme.html',
+        dest: 'demo/dist/index.html',
         options: {
-          template: 'example/index.html'
+          template: 'demo/layout.html'
         }
       }
     },
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         tasks: ['jasmine_node']
       },
       markdown: {
-        files: ['README.md', 'example/template.html'],
+        files: ['README.md', 'demo/layout.html'],
         tasks: ['markdown']
       }
     }
