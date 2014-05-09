@@ -20,7 +20,7 @@ We’ve got a couple of principles that should be clear to you:
 # Mixins
 
 ## grid
-Let's start with a grid of 12 columns. And while we're on it, let's split them up in 's', 'm' and 'l' layouts.
+Let's start with a grid of 12 columns. And while we're on it, let's split them up in "s", "m" and "l" layouts.
 
 ```scss
 @import 'T-1000';
