@@ -120,7 +120,7 @@ This way the elements will be at full width for `s`, they're equally divided for
 }
 
 @media only screen and (min-width: 1000px) {
-  @include grid(l, 12, 5px);
+  @include grid(l, 12, 8px);
 }
 
 @media only screen and (min-width: 1400px) {
@@ -154,11 +154,7 @@ Columns are not the only flexible pieces in the puzzle of RWD. Often you find yo
 }
 
 @media only screen and (min-width: 1000px) {
-  @include properties(5px, (margin, padding));
-}
-
-@media only screen and (min-width: 1000px) {
-  @include properties(10px, (margin, padding));
+  @include properties(8px, (margin, padding));
 }
 ```
 
@@ -176,13 +172,8 @@ This will generate classes with appropriate margins:
 }
 
 @media only screen and (min-width: 1000px) {
-  .margin { margin: 5px; }
-  .padding { padding: 5px; }
-}
-
-@media only screen and (min-width: 1000px) {
-  .margin { margin: 10px; }
-  .padding { padding: 10px; }
+  .margin { margin: 8px; }
+  .padding { padding: 8px; }
 }
 ```
 
@@ -198,11 +189,7 @@ When you use these classes instead of specific CSS you'll notice that things get
 }
 
 @media only screen and (min-width: 1000px) {
-  @include properties(5px, (margin, padding), double);
-}
-
-@media only screen and (min-width: 1000px) {
-  @include properties(10px, (margin, padding), double);
+  @include properties(8px, (margin, padding), double);
 }
 ```
 
@@ -218,13 +205,8 @@ When you use these classes instead of specific CSS you'll notice that things get
 }
 
 @media only screen and (min-width: 1000px) {
-  .margin-double { margin: 10px; }
-  .padding-double { padding: 10px; }
-}
-
-@media only screen and (min-width: 1000px) {
-  .margin-double { margin: 20px; }
-  .padding-double { padding: 20px; }
+  .margin-double { margin: 16px; }
+  .padding-double { padding: 16px; }
 }
 ```
 
@@ -244,11 +226,7 @@ When you're in a situation where you only want some margin in a specific layout,
 }
 
 @media only screen and (min-width: 1000px) {
-  @include properties-for-layout(l, 5px, margin);
-}
-
-@media only screen and (min-width: 1000px) {
-  @include properties-for-layout(xl, 10px, margin);
+  @include properties-for-layout(l, 8px, margin);
 }
 ```
 
@@ -262,11 +240,7 @@ When you're in a situation where you only want some margin in a specific layout,
 }
 
 @media only screen and (min-width: 1000px) {
-  .l-margin { margin: 5px; }
-}
-
-@media only screen and (min-width: 1000px) {
-  .xl-margin { margin: 10px; }
+  .l-margin { margin: 8px; }
 }
 ```
 
