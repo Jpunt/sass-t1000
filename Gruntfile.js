@@ -10,6 +10,10 @@ module.exports = function(grunt) {
       }
     },
 
+    jasmine_node: {
+      all: ['spec/']
+    },
+
     watch: {
       concat: {
         files: '<%= concat.dist.src %>',
@@ -20,6 +24,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-jasmine-node');
 
-  grunt.registerTask('default', ['concat']);
+  grunt.registerTask('default', ['jasmine_node', 'concat']);
 };
