@@ -1,0 +1,28 @@
+{
+  "name": "sass-t-1000-grid",
+  "version": "0.0.0",
+  "description": "A responsive grid system, based on SASS-mixins",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Jpunt/sass-t-1000-grid.git"
+  },
+  "keywords": [
+    "sass",
+    "grid"
+  ],
+  "author": "Jasper Haggenburg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jpunt/sass-t-1000-grid/issues"
+  },
+  "homepage": "https://github.com/Jpunt/sass-t-1000-grid",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
