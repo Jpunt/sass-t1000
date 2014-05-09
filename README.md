@@ -17,7 +17,7 @@ We’ve got a couple of principles that should be clear to you:
 - The space between a column and a row make a gutter
 
 # Grid
-Let's start with a grid of 4 columns. And while we're on it, let's split them up in 's', 'm' and 'l' layouts.
+Let's start with a grid of 12 columns. And while we're on it, let's split them up in 's', 'm' and 'l' layouts.
 
 ```scss
 @import 'T-1000';
@@ -35,7 +35,7 @@ Let's start with a grid of 4 columns. And while we're on it, let's split them up
 }
 ```
 
-This will produce classes with appropriate widths and paddings:
+This will generate classes with appropriate widths and paddings:
 
 ```css
 @media only screen and (max-width: 399px) {
@@ -91,8 +91,6 @@ This will produce classes with appropriate widths and paddings:
   .l-11 { width: 91.66667%; }
   .l-12 { width: 100%; }
 }
-
-
 ```
 
 So, if you have some elements that you'd like to layout, you can do things like this:
@@ -105,7 +103,7 @@ So, if you have some elements that you'd like to layout, you can do things like 
 </div>
 ```
 
-This way the elements will be at full width for the 's' layout, they're equally divided for the 'l' layout and something special the 'm' layout. But c'mon, 12 columns and a 10px gutter for small screens? That's insane. Let's clean that up and give large screens a little bit more air as well:
+This way the elements will be at full width for `s`, they're equally divided for `l` layout and something special `m`. But c'mon, 12 columns and a `10px` gutter for small screens? That's insane. Let's clean that up and give large screens a little bit more air as well:
 
 ```scss
 @import 'T-1000';
@@ -134,3 +132,5 @@ This way the elements will be at full width for the 's' layout, they're equally 
   <div class="col s-2 m-3 l-4 xl-4">Third piece of content</div>
 </div>
 ```
+
+You wanna get fancy and use em-based media-queries? Sure, it's your layout.
