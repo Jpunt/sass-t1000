@@ -80,3 +80,12 @@
     }
   }
 }
+
+@mixin reset-properties-for-layout($layout, $properties) {
+  @each $property in $properties {
+    // .s-reset-margin, .s-reset-padding, etc
+    .#{$layout}-reset-#{$property} {
+      #{$property}: 0 !important;
+    }
+  }
+}

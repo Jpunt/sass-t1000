@@ -70,7 +70,7 @@ describe('Mixins', function() {
       });
 
       it('properties-for-layout(s, 5px, (margin, padding))', function() {
-        expect(compiled('properties-for-layout-s-5px-margin.scss')).toEqual(expected('properties-for-layout-s-5px-margin.css'));
+        expect(compiled('properties-for-layout-s-5px-margin-padding.scss')).toEqual(expected('properties-for-layout-s-5px-margin-padding.css'));
       });
 
       it('properties-for-layout(m, 5px, margin)', function() {
@@ -94,6 +94,21 @@ describe('Mixins', function() {
       it('properties-for-layout-s-for-layout(5px, margin, triple)', function() {
         expect(compiled('properties-for-layout-s-5px-margin-triple.scss')).toEqual(expected('properties-for-layout-s-5px-margin-triple.css'));
       });
+    });
+  });
+
+
+  describe('reset-properties-for-layout', function() {
+    it('reset-properties-for-layout(s, margin)', function() {
+      expect(compiled('reset-properties-for-layout-s-margin.scss')).toEqual(expected('reset-properties-for-layout-s-margin.css'));
+    });
+
+    it('reset-properties-for-layout(s, (margin, padding))', function() {
+      expect(compiled('reset-properties-for-layout-s-margin-padding.scss')).toEqual(expected('reset-properties-for-layout-s-margin-padding.css'));
+    });
+
+    it('reset-properties-for-layout(m, margin)', function() {
+      expect(compiled('reset-properties-for-layout-m-margin.scss')).toEqual(expected('reset-properties-for-layout-m-margin.css'));
     });
   });
 });
