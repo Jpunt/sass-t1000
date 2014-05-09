@@ -23,24 +23,29 @@
 
 @mixin properties($padding, $properties, $scale:false) {
   @each $property in $properties {
+
+    // .margin, .padding, etc
     @if($scale == false) {
       .#{$property} {
         #{$property}: $padding;
       }
     }
 
+    // .margin-double, .padding-double, etc
     @if($scale == double) {
       .#{$property}-double {
         #{$property}: ($padding * 2);
       }
     }
 
+    // .margin-half, .padding-half, etc
     @if($scale == half) {
       .#{$property}-half {
         #{$property}: ($padding / 2);
       }
     }
 
+    // .margin-triple, .padding-triple, etc
     @if($scale == triple) {
       .#{$property}-triple {
         #{$property}: ($padding * 3);
@@ -51,24 +56,29 @@
 
 @mixin properties-for-layout($layout, $padding, $properties, $scale:false) {
   @each $property in $properties {
+
+    // .s-margin, .s-padding, etc
     @if($scale == false) {
       .#{$layout}-#{$property} {
         #{$property}: $padding;
       }
     }
 
+    // .s-margin-double, .s-padding-double, etc
     @if($scale == double) {
       .#{$layout}-#{$property}-double {
         #{$property}: ($padding * 2);
       }
     }
 
+    // .s-margin-half, .s-padding-half, etc
     @if($scale == half) {
       .#{$layout}-#{$property}-half {
         #{$property}: ($padding / 2);
       }
     }
 
+    // .s-margin-triple, .s-padding-triple, etc
     @if($scale == triple) {
       .#{$layout}-#{$property}-triple {
         #{$property}: ($padding * 3);
