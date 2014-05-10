@@ -97,6 +97,15 @@ describe('Mixins', function() {
     });
   });
 
+  describe('reset-properties', function() {
+    it('reset-properties(margin)', function() {
+      expect(compiled('reset-properties-margin.scss')).toEqual(expected('reset-properties-margin.css'));
+    });
+
+    it('reset-properties((margin, padding))', function() {
+      expect(compiled('reset-properties-margin-padding.scss')).toEqual(expected('reset-properties-margin-padding.css'));
+    });
+  });
 
   describe('reset-properties-for-layout', function() {
     it('reset-properties-for-layout(s, margin)', function() {
