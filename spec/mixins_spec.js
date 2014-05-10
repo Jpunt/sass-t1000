@@ -3,7 +3,7 @@ var path = require('path');
 var sass = require('node-sass');
 
 String.prototype.normalize = function() {
-  return this.replace(/\s+/g, ' ');
+  return this.replace(/\s+/g, ' ').trim();
 }
 
 function scss(scss) {
