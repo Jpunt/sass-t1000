@@ -8,7 +8,7 @@
 <li>Put columns in a row</li>
 <li>Columns are flexible</li>
 <li>Gutters are fixed</li>
-<li>Two spaces between two columns make a gutter</li>
+<li>The space between two columns make a gutter</li>
 <li>The space between a column and a row make a gutter</li>
 <li>With great power, comes great responsibility. Only include what you need!</li>
 </ul>
@@ -101,15 +101,48 @@
 
 @media only screen and (min-width: 1000px) {
   @include grid(l, 12, 8px);
+}</code></pre>
+<pre><code class="lang-css">@media only screen and (max-width: 399px) {
+  .row { padding: 2px; }
+  .col { padding: 2px; }
+
+  .s-1 { width: 50%; }
+  .s-2 { width: 100%; }
 }
 
-@media only screen and (min-width: 1400px) {
-  @include grid(xl, 12, 10px);
+@media only screen and (min-width: 400px) {
+  .row { padding: 5px; }
+  .col { padding: 5px; }
+
+  .m-1 { width: 16.6666666667%; }
+  .m-2 { width: 33.3333333333%; }
+  .m-3 { width: 50%; }
+  .m-4 { width: 66.6666666667%; }
+  .m-5 { width: 83.3333333333%; }
+  .m-6 { width: 100%; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .row { padding: 8px; }
+  .col { padding: 8px; }
+
+  .l-1 { width: 8.3333333333%; }
+  .l-2 { width: 16.6666666667%; }
+  .l-3 { width: 25%; }
+  .l-4 { width: 33.3333333333%; }
+  .l-5 { width: 41.6666666667%; }
+  .l-6 { width: 50%; }
+  .l-7 { width: 58.3333333333%; }
+  .l-8 { width: 66.6666666667%; }
+  .l-9 { width: 75%; }
+  .l-10 { width: 83.3333333333%; }
+  .l-11 { width: 91.6666666667%; }
+  .l-12 { width: 100%; }
 }</code></pre>
 <pre><code class="lang-html">&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;col s-2 m-6 l-4 xl-4&quot;&gt;First piece of content&lt;/div&gt;
-  &lt;div class=&quot;col s-2 m-3 l-4 xl-4&quot;&gt;Second piece of content&lt;/div&gt;
-  &lt;div class=&quot;col s-2 m-3 l-4 xl-4&quot;&gt;Third piece of content&lt;/div&gt;
+  &lt;div class=&quot;col s-2 m-6 l-4&quot;&gt;First piece of content&lt;/div&gt;
+  &lt;div class=&quot;col s-2 m-3 l-4&quot;&gt;Second piece of content&lt;/div&gt;
+  &lt;div class=&quot;col s-2 m-3 l-4&quot;&gt;Third piece of content&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p>You wanna get fancy and use em-based media-queries? Sure, it&#39;s your layout.</p>
 <h3 id="properties">properties</h3>
@@ -143,7 +176,9 @@
   .padding { padding: 8px; }
 }</code></pre>
 <p>When you use these classes instead of specific CSS you&#39;ll notice that things get more consistent, especially in combination with the grid. But of course these classes aren&#39;t enough for all cases. That&#39;s why we&#39;ve got some extra onces, which are still in balance with the overall sizing of things:</p>
-<pre><code class="lang-scss">@media only screen and (max-width: 399px) {
+<pre><code class="lang-scss">@import &#39;T-1000&#39;;
+
+@media only screen and (max-width: 399px) {
   @include properties(2px, (margin, padding), double);
 }
 
@@ -171,27 +206,50 @@
 <p><code>triple</code> and <code>half</code> are also available. In my experience: When you need any more or less than this, there&#39;s probably something wrong with the design. When you experience a desperate need for more, file a bug and let me know.</p>
 <h3 id="properties-for-layout">properties-for-layout</h3>
 <p>When you&#39;re in a situation where you only want some margin in a specific layout, use <code>properties-for-layout</code>:</p>
-<pre><code class="lang-scss">@media only screen and (max-width: 399px) {
-  @include properties-for-layout(s, 2px, margin);
+<pre><code class="lang-scss">@import &#39;T-1000&#39;;
+
+@media only screen and (max-width: 399px) {
+  @include properties-for-layout(s, 2px, (margin, padding));
 }
 
 @media only screen and (min-width: 400px) {
-  @include properties-for-layout(m, 5px, margin);
+  @include properties-for-layout(m, 5px, (margin, padding));
 }
 
 @media only screen and (min-width: 1000px) {
-  @include properties-for-layout(l, 8px, margin);
+  @include properties-for-layout(l, 8px, (margin, padding));
 }</code></pre>
 <pre><code class="lang-css">@media only screen and (max-width: 399px) {
   .s-margin { margin: 2px; }
+  .s-padding { padding: 2px; }
 }
 
 @media only screen and (min-width: 400px) {
   .m-margin { margin: 5px; }
+  .m-padding { padding: 5px; }
 }
 
 @media only screen and (min-width: 1000px) {
   .l-margin { margin: 8px; }
+  .l-padding { padding: 8px; }
 }</code></pre>
 <p>You can use <code>double</code> / <code>triple</code> / <code>half</code> here as well, like this:</p>
 <pre><code>@include properties-for-layout(m, 5px, margin, double)</code></pre>
+<h3 id="reset-properties">reset-properties</h3>
+<p>There&#39;re cases that you don&#39;t want certain properties to be set, for instance by one of the above mixins. For this, you can do this:</p>
+<pre><code class="lang-scss">@import &#39;T-1000&#39;;
+
+@include reset-properties((margin, padding));</code></pre>
+<pre><code class="lang-css">.reset-margin { margin: 0 !important; }
+.reset-padding { padding: 0 !important; }</code></pre>
+<h3 id="reset-properties-for-layout">reset-properties-for-layout</h3>
+<p>Or when you want properties to reset for certain layouts only, you can do this:</p>
+<pre><code class="lang-scss">@import &#39;T-1000&#39;;
+
+@media only screen and (max-width: 399px) {
+  @include reset-properties-for-layout(s, (margin, padding));
+}</code></pre>
+<pre><code class="lang-css">@media only screen and (max-width: 399px) {
+  .s-reset-margin { margin: 0 !important; }
+  .s-reset-padding { padding: 0 !important; }
+}</code></pre>

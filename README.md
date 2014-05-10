@@ -21,8 +21,6 @@ We’ve got a couple of principles that should be clear to you:
 Let's start with a grid of 12 columns. And while we're on it, let's split them up in "s", "m" and "l" layouts.
 
 ```scss
-@import 'T-1000';
-
 @media only screen and (max-width: 399px) {
   @include grid(s, 12, 5px);
 }
@@ -107,8 +105,6 @@ So, if you have some elements that you'd like to layout, you can do things like 
 This way the elements will be at full width for `s`, they're equally divided for `l` layout and something special for `m`. But c'mon, 12 columns and such a large gutter for small screens? That's insane. Let's clean that up and give large screens a little bit more air as well:
 
 ```scss
-@import 'T-1000';
-
 @media only screen and (max-width: 399px) {
   @include grid(s, 2, 2px);
 }
@@ -177,8 +173,6 @@ You wanna get fancy and use em-based media-queries? Sure, it's your layout.
 Columns are not the only flexible pieces in the puzzle of RWD. Often you find yourself setting properties (like margins, paddings, etc) that need different sizes for different layouts. You can do this with specific CSS, but how about this:
 
 ```scss
-@import 'T-1000';
-
 @media only screen and (max-width: 399px) {
   @include properties(2px, (margin, padding));
 }
@@ -252,29 +246,32 @@ When you're in a situation where you only want some margin in a specific layout,
 
 ```scss
 @media only screen and (max-width: 399px) {
-  @include properties-for-layout(s, 2px, margin);
+  @include properties-for-layout(s, 2px, (margin, padding));
 }
 
 @media only screen and (min-width: 400px) {
-  @include properties-for-layout(m, 5px, margin);
+  @include properties-for-layout(m, 5px, (margin, padding));
 }
 
 @media only screen and (min-width: 1000px) {
-  @include properties-for-layout(l, 8px, margin);
+  @include properties-for-layout(l, 8px, (margin, padding));
 }
 ```
 
 ```css
 @media only screen and (max-width: 399px) {
   .s-margin { margin: 2px; }
+  .s-padding { padding: 2px; }
 }
 
 @media only screen and (min-width: 400px) {
   .m-margin { margin: 5px; }
+  .m-padding { padding: 5px; }
 }
 
 @media only screen and (min-width: 1000px) {
   .l-margin { margin: 8px; }
+  .l-padding { padding: 8px; }
 }
 ```
 
@@ -282,4 +279,32 @@ You can use `double` / `triple` / `half` here as well, like this:
 
 ```
 @include properties-for-layout(m, 5px, margin, double)
+```
+
+### reset-properties
+There're cases that you don't want certain properties to be set, for instance by one of the above mixins. For this, you can do this:
+
+```scss
+@include reset-properties((margin, padding));
+```
+
+```css
+.reset-margin { margin: 0 !important; }
+.reset-padding { padding: 0 !important; }
+```
+
+### reset-properties-for-layout
+Or when you want properties to reset for certain layouts only, you can do this:
+
+```scss
+@media only screen and (max-width: 399px) {
+  @include reset-properties-for-layout(s, (margin, padding));
+}
+```
+
+```css
+@media only screen and (max-width: 399px) {
+  .s-reset-margin { margin: 0 !important; }
+  .s-reset-padding { padding: 0 !important; }
+}
 ```
