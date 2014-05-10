@@ -120,17 +120,53 @@ This way the elements will be at full width for `s`, they're equally divided for
 @media only screen and (min-width: 1000px) {
   @include grid(l, 12, 8px);
 }
+```
 
-@media only screen and (min-width: 1400px) {
-  @include grid(xl, 12, 10px);
+```css
+@media only screen and (max-width: 399px) {
+  .row { padding: 2px; }
+  .col { padding: 2px; }
+
+  .s-1 { width: 50%; }
+  .s-2 { width: 100%; }
+}
+
+@media only screen and (min-width: 400px) {
+  .row { padding: 5px; }
+  .col { padding: 5px; }
+
+  .m-1 { width: 16.6666666667%; }
+  .m-2 { width: 33.3333333333%; }
+  .m-3 { width: 50%; }
+  .m-4 { width: 66.6666666667%; }
+  .m-5 { width: 83.3333333333%; }
+  .m-6 { width: 100%; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .row { padding: 8px; }
+  .col { padding: 8px; }
+
+  .l-1 { width: 8.3333333333%; }
+  .l-2 { width: 16.6666666667%; }
+  .l-3 { width: 25%; }
+  .l-4 { width: 33.3333333333%; }
+  .l-5 { width: 41.6666666667%; }
+  .l-6 { width: 50%; }
+  .l-7 { width: 58.3333333333%; }
+  .l-8 { width: 66.6666666667%; }
+  .l-9 { width: 75%; }
+  .l-10 { width: 83.3333333333%; }
+  .l-11 { width: 91.6666666667%; }
+  .l-12 { width: 100%; }
 }
 ```
 
 ```html
 <div class="row">
-  <div class="col s-2 m-6 l-4 xl-4">First piece of content</div>
-  <div class="col s-2 m-3 l-4 xl-4">Second piece of content</div>
-  <div class="col s-2 m-3 l-4 xl-4">Third piece of content</div>
+  <div class="col s-2 m-6 l-4">First piece of content</div>
+  <div class="col s-2 m-3 l-4">Second piece of content</div>
+  <div class="col s-2 m-3 l-4">Third piece of content</div>
 </div>
 ```
 
