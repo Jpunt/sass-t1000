@@ -15,7 +15,7 @@
   max-width: 1024px;
 }
 
-@include reset-properties((padding));
+@include reset-properties((padding, margin-bottom));
 
 @media only screen and (max-width:599px) {
   $space: 5px;
@@ -95,11 +95,17 @@ body {
 /*
  * Code
  */
-.gist {
+.gist-embed {
   margin: 1em 0;
 
-  .file-data {
-    max-height: 17em;
-    overflow: auto;
+  .gist {
+    .gist-file {
+      margin-bottom: 0;
+    }
+
+    .file-data {
+      max-height: 17em;
+      overflow: auto;
+    }
   }
 }
