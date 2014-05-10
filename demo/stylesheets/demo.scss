@@ -28,7 +28,7 @@
     width: 98%;
   }
 
-  $space: 10px;
+  $space: 8px;
   @include grid(m, 6, $space);
   @include properties($space, (padding), double);
 }
@@ -38,7 +38,7 @@
     width: 90%;
   }
 
-  $space: 15px;
+  $space: 12px;
   @include grid(l, 12, $space);
   @include properties($space, (padding), double);
 }
@@ -49,12 +49,13 @@
 
 body {
   font-size: 100%;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
 h1 {
   padding: 1em 0;
   font-size: 4em;
+  font-weight: normal;
   text-align: center;
 }
 
@@ -65,6 +66,10 @@ p {
 code {
   font-size: 1em;
   padding: 0.2em 0.4em
+}
+
+strong {
+  font-weight: 700;
 }
 
 /*
@@ -93,3 +98,8 @@ body {
 .gist {
   margin: 1em 0;
 }
+.gist{font-size:13px;line-height:18px;margin-bottom:20px;width:100%}
+.gist pre{font-family:Menlo,Monaco,'Bitstream Vera Sans Mono','Courier New',monospace !important}
+.gist-meta{font-family:Helvetica,Arial,sans-serif;font-size:13px !important}
+.gist-meta a{color:#26a !important;text-decoration:none}
+.gist-meta a:hover{color:#0e4071 !important}
