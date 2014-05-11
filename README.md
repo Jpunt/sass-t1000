@@ -18,7 +18,7 @@ We’ve got a couple of principles that should be clear to you:
 ## Mixins
 
 ### grid
-*Note: Below are some examples of how to use the grid. It's how I like to do it. If you wanna get fancy and use em-based media-queries or get oldscool and call the layouts “mobile” and “desktop”: Knock yourself out, it's your grid. Let the content do the talking and include what's needed for that.*
+*Note: Below are some examples of how to use the grid. It's how I like to do it. If you wanna get fancy and use em-based media-queries or get oldscool and call the layouts “mobile” and “desktop”: Knock yourself out, it's your grid. Let the content do the talking and include what's needed for that. Check the [styles of the demo-page](https://github.com/Jpunt/sass-t-1000-grid/blob/master/demo/stylesheets/_layout.scss) for a real-life example.*
 
 Let's start with a grid of 12 columns. And while we're on it, let's split them up in a couple of layouts:
 
