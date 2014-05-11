@@ -1,3 +1,4 @@
+@import 'bourbon/bourbon';
 @import 'reset.css';
 @import '../../dist/T-1000.scss';
 
@@ -20,7 +21,8 @@
 @media only screen and (max-width:599px) {
   $space: 5px;
   @include grid(s, 2, $space);
-  @include properties($space, (padding), double);
+  @include properties($space, (padding, margin));
+  @include properties($space, (padding padding-left padding-right), double);
 }
 
 @media only screen and (min-width:600px) {
@@ -30,7 +32,8 @@
 
   $space: 8px;
   @include grid(m, 6, $space);
-  @include properties($space, (padding), double);
+  @include properties($space, (padding, margin));
+  @include properties($space, (padding padding-left padding-right), double);
 }
 
 @media only screen and (min-width:1000px) {
@@ -40,7 +43,8 @@
 
   $space: 12px;
   @include grid(l, 12, $space);
-  @include properties($space, (padding), double);
+  @include properties($space, (padding, margin));
+  @include properties($space, (padding padding-left padding-right), double);
 }
 
 /*
@@ -75,9 +79,15 @@ strong {
 /*
  * Colors
  */
+
+$bg-medium: #f0f0f0;
+$bg-light: #fdfdfd;
+$text: #333;
+$green: #2ee3a5;
+
 body {
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: $bg-medium;
+  color: $text;
 
   code {
     background-color: #e4e4e4;
@@ -85,7 +95,7 @@ body {
 }
 
 .bg-light {
-  background-color: #fdfdfd
+  background-color: $bg-light;
 }
 
 .row {
@@ -106,6 +116,38 @@ body {
     .file-data {
       max-height: 17em;
       overflow: auto;
+    }
+  }
+}
+
+/*
+ * Download
+ */
+.download {
+  text-align: center;
+
+  .primary {
+    font-size: 1.7em;
+
+    a {
+      display: block;
+      color: white;
+      background-color: $green;
+      text-decoration: none;
+      text-transform: uppercase;
+      @include transition (all 0.15s ease-in-out);
+
+      &:hover {
+      }
+    }
+  }
+
+  .secondary {
+    padding-top: 0.2em;
+    font-size: 0.5em;
+
+    a {
+      color: $text;
     }
   }
 }

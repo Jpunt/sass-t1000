@@ -68,6 +68,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jasmine-node');
   grunt.loadNpmTasks('grunt-markdown');
 
-  grunt.registerTask('default', ['jasmine_node', 'concat', 'sass', 'copy']);
+  grunt.registerTask('default', ['jasmine_node', 'concat', 'sass', 'copy', 'watch']);
   grunt.registerTask('test', ['jasmine_node']);
 };
