@@ -89,12 +89,23 @@ p, code {
   line-height: 1.7em;
 }
 
+p {
+  margin-bottom: 1em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 code {
   padding: 0.2em 0.4em
 }
 
 strong {
   font-weight: 700;
+}
+
+em {
+  font-style: italic;
 }
 
 /*

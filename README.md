@@ -18,19 +18,21 @@ We’ve got a couple of principles that should be clear to you:
 ## Mixins
 
 ### grid
-Let's start with a grid of 12 columns. And while we're on it, let's split them up in "s", "m" and "l" layouts.
+*Note: Below are some examples of how to use the grid. It's how I like to do it. If you wanna get fancy and use em-based media-queries or get oldscool and call the layouts “mobile” and “desktop”: Knock yourself out, it's your grid. Let the content do the talking and include what's needed for that.*
+
+Let's start with a grid of 12 columns. And while we're on it, let's split them up in a couple of layouts:
 
 ```scss
 @media only screen and (max-width: 399px) {
-  @include grid(s, 12, 5px);
+  @include grid(s, 12, 8px);
 }
 
 @media only screen and (min-width: 400px) {
-  @include grid(m, 12, 5px);
+  @include grid(m, 12, 8px);
 }
 
 @media only screen and (min-width: 1000px) {
-  @include grid(l, 12, 5px);
+  @include grid(l, 12, 8px);
 }
 ```
 
@@ -38,8 +40,8 @@ This will generate classes with appropriate widths and paddings:
 
 ```css
 @media only screen and (max-width: 399px) {
-  .row { padding: 5px; }
-  .col { padding: 5px; }
+  .row { padding: 8px; }
+  .col { padding: 8px; }
 
   .s-1 { width: 8.33333%; }
   .s-2 { width: 16.66667%; }
@@ -56,8 +58,8 @@ This will generate classes with appropriate widths and paddings:
 }
 
 @media only screen and (min-width: 400px) {
-  .row { padding: 5px; }
-  .col { padding: 5px; }
+  .row { padding: 8px; }
+  .col { padding: 8px; }
 
   .m-1 { width: 8.33333%; }
   .m-2 { width: 16.66667%; }
@@ -74,8 +76,8 @@ This will generate classes with appropriate widths and paddings:
 }
 
 @media only screen and (min-width: 1000px) {
-  .row { padding: 5px; }
-  .col { padding: 5px; }
+  .row { padding: 8px; }
+  .col { padding: 8px; }
 
   .l-1 { width: 8.33333%; }
   .l-2 { width: 16.66667%; }
@@ -106,30 +108,30 @@ This way the elements will be at full width for `s`, they're equally divided for
 
 ```scss
 @media only screen and (max-width: 399px) {
-  @include grid(s, 2, 2px);
+  @include grid(s, 2, 5px);
 }
 
 @media only screen and (min-width: 400px) {
-  @include grid(m, 6, 5px);
+  @include grid(m, 6, 8px);
 }
 
 @media only screen and (min-width: 1000px) {
-  @include grid(l, 12, 8px);
+  @include grid(l, 12, 10px);
 }
 ```
 
 ```css
 @media only screen and (max-width: 399px) {
-  .row { padding: 2px; }
-  .col { padding: 2px; }
+  .row { padding: 5px; }
+  .col { padding: 5px; }
 
   .s-1 { width: 50%; }
   .s-2 { width: 100%; }
 }
 
 @media only screen and (min-width: 400px) {
-  .row { padding: 5px; }
-  .col { padding: 5px; }
+  .row { padding: 8px; }
+  .col { padding: 8px; }
 
   .m-1 { width: 16.6666666667%; }
   .m-2 { width: 33.3333333333%; }
@@ -140,8 +142,8 @@ This way the elements will be at full width for `s`, they're equally divided for
 }
 
 @media only screen and (min-width: 1000px) {
-  .row { padding: 8px; }
-  .col { padding: 8px; }
+  .row { padding: 10px; }
+  .col { padding: 10px; }
 
   .l-1 { width: 8.3333333333%; }
   .l-2 { width: 16.6666666667%; }
@@ -166,7 +168,103 @@ This way the elements will be at full width for `s`, they're equally divided for
 </div>
 ```
 
-You wanna get fancy and use em-based media-queries? Sure, it's your layout.
+You can also enable prefixes and suffixes to leave extra room before or after columns:
+
+```scss
+@media only screen and (max-width: 399px) {
+  @include grid(s, 2, 5px, (prefix, suffix));
+}
+
+@media only screen and (min-width: 400px) {
+  @include grid(m, 6, 8px, (prefix, suffix));
+}
+
+@media only screen and (min-width: 1000px) {
+  @include grid(l, 12, 10px, (prefix, suffix));
+}
+```
+
+```css
+@media only screen and (max-width: 399px) {
+  .row { padding: 5px; }
+  .col { padding: 5px; }
+
+  .s-1 { width: 50%; }
+  .s-2 { width: 100%; }
+  .s-prefix-1 { margin-left: 50%; }
+  .s-prefix-2 { margin-left: 100%; }
+  .s-suffix-1 { margin-right: 50%; }
+  .s-suffix-2 { margin-right: 100%; }
+}
+
+@media only screen and (min-width: 400px) {
+  .row { padding: 8px; }
+  .col { padding: 8px; }
+
+  .m-1 { width: 16.66667%; }
+  .m-2 { width: 33.33333%; }
+  .m-3 { width: 50%; }
+  .m-4 { width: 66.66667%; }
+  .m-5 { width: 83.33333%; }
+  .m-6 { width: 100%; }
+  .m-prefix-1 { margin-left: 16.66667%; }
+  .m-prefix-2 { margin-left: 33.33333%; }
+  .m-prefix-3 { margin-left: 50%; }
+  .m-prefix-4 { margin-left: 66.66667%; }
+  .m-prefix-5 { margin-left: 83.33333%; }
+  .m-prefix-6 { margin-left: 100%; }
+  .m-suffix-1 { margin-right: 16.66667%; }
+  .m-suffix-2 { margin-right: 33.33333%; }
+  .m-suffix-3 { margin-right: 50%; }
+  .m-suffix-4 { margin-right: 66.66667%; }
+  .m-suffix-5 { margin-right: 83.33333%; }
+  .m-suffix-6 { margin-right: 100%; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .row { padding: 10px; }
+  .col { padding: 10px; }
+
+  .l-1 { width: 8.33333%; }
+  .l-2 { width: 16.66667%; }
+  .l-3 { width: 25%; }
+  .l-4 { width: 33.33333%; }
+  .l-5 { width: 41.66667%; }
+  .l-6 { width: 50%; }
+  .l-7 { width: 58.33333%; }
+  .l-8 { width: 66.66667%; }
+  .l-9 { width: 75%; }
+  .l-10 { width: 83.33333%; }
+  .l-11 { width: 91.66667%; }
+  .l-12 { width: 100%; }
+  .l-prefix-1 { margin-left: 8.33333%; }
+  .l-prefix-2 { margin-left: 16.66667%; }
+  .l-prefix-3 { margin-left: 25%; }
+  .l-prefix-4 { margin-left: 33.33333%; }
+  .l-prefix-5 { margin-left: 41.66667%; }
+  .l-prefix-6 { margin-left: 50%; }
+  .l-prefix-7 { margin-left: 58.33333%; }
+  .l-prefix-8 { margin-left: 66.66667%; }
+  .l-prefix-9 { margin-left: 75%; }
+  .l-prefix-10 { margin-left: 83.33333%; }
+  .l-prefix-11 { margin-left: 91.66667%; }
+  .l-prefix-12 { margin-left: 100%; }
+  .l-suffix-1 { margin-right: 8.33333%; }
+  .l-suffix-2 { margin-right: 16.66667%; }
+  .l-suffix-3 { margin-right: 25%; }
+  .l-suffix-4 { margin-right: 33.33333%; }
+  .l-suffix-5 { margin-right: 41.66667%; }
+  .l-suffix-6 { margin-right: 50%; }
+  .l-suffix-7 { margin-right: 58.33333%; }
+  .l-suffix-8 { margin-right: 66.66667%; }
+  .l-suffix-9 { margin-right: 75%; }
+  .l-suffix-10 { margin-right: 83.33333%; }
+  .l-suffix-11 { margin-right: 91.66667%; }
+  .l-suffix-12 { margin-right: 100%; }
+}
+```
+
+Obviously, this is quite a lot of generated css, so enable only what you need (that's why it's optional).
 
 
 ### properties
@@ -174,15 +272,15 @@ Columns are not the only flexible pieces in the puzzle of RWD. Often you find yo
 
 ```scss
 @media only screen and (max-width: 399px) {
-  @include properties(2px, (margin, padding));
-}
-
-@media only screen and (min-width: 400px) {
   @include properties(5px, (margin, padding));
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 400px) {
   @include properties(8px, (margin, padding));
+}
+
+@media only screen and (min-width: 1000px) {
+  @include properties(10px, (margin, padding));
 }
 ```
 
@@ -190,18 +288,18 @@ This will generate classes with appropriate margins:
 
 ```css
 @media only screen and (max-width: 399px) {
-  .margin { margin: 2px; }
-  .padding { padding: 2px; }
-}
-
-@media only screen and (min-width: 400px) {
   .margin { margin: 5px; }
   .padding { padding: 5px; }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 400px) {
   .margin { margin: 8px; }
   .padding { padding: 8px; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .margin { margin: 10px; }
+  .padding { padding: 10px; }
 }
 ```
 
@@ -209,32 +307,32 @@ When you use these classes instead of specific CSS you'll notice that things get
 
 ```scss
 @media only screen and (max-width: 399px) {
-  @include properties(2px, (margin, padding), double);
-}
-
-@media only screen and (min-width: 400px) {
   @include properties(5px, (margin, padding), double);
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 400px) {
   @include properties(8px, (margin, padding), double);
+}
+
+@media only screen and (min-width: 1000px) {
+  @include properties(10px, (margin, padding), double);
 }
 ```
 
 ```css
 @media only screen and (max-width: 399px) {
-  .margin-double { margin: 4px; }
-  .padding-double { padding: 4px; }
-}
-
-@media only screen and (min-width: 400px) {
   .margin-double { margin: 10px; }
   .padding-double { padding: 10px; }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 400px) {
   .margin-double { margin: 16px; }
   .padding-double { padding: 16px; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .margin-double { margin: 20px; }
+  .padding-double { padding: 20px; }
 }
 ```
 
@@ -246,39 +344,39 @@ When you're in a situation where you only want some margin in a specific layout,
 
 ```scss
 @media only screen and (max-width: 399px) {
-  @include properties-for-layout(s, 2px, (margin, padding));
+  @include properties-for-layout(s, 5px, (margin, padding));
 }
 
 @media only screen and (min-width: 400px) {
-  @include properties-for-layout(m, 5px, (margin, padding));
+  @include properties-for-layout(m, 8px, (margin, padding));
 }
 
 @media only screen and (min-width: 1000px) {
-  @include properties-for-layout(l, 8px, (margin, padding));
+  @include properties-for-layout(l, 10px, (margin, padding));
 }
 ```
 
 ```css
 @media only screen and (max-width: 399px) {
-  .s-margin { margin: 2px; }
-  .s-padding { padding: 2px; }
+  .s-margin { margin: 5px; }
+  .s-padding { padding: 5px; }
 }
 
 @media only screen and (min-width: 400px) {
-  .m-margin { margin: 5px; }
-  .m-padding { padding: 5px; }
+  .m-margin { margin: 8px; }
+  .m-padding { padding: 8px; }
 }
 
 @media only screen and (min-width: 1000px) {
-  .l-margin { margin: 8px; }
-  .l-padding { padding: 8px; }
+  .l-margin { margin: 10px; }
+  .l-padding { padding: 10px; }
 }
 ```
 
 You can use `double` / `triple` / `half` here as well, like this:
 
 ```
-@include properties-for-layout(m, 5px, margin, double)
+@include properties-for-layout(m, 8px, margin, double)
 ```
 
 ### reset-properties
