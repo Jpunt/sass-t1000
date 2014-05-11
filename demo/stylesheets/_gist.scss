@@ -1,5 +1,5 @@
 .gist-embed {
-  @media #{$mq-s} { margin: ($space-s * 2) 0; font-size: 0.9em; }
+  @media #{$mq-s} { margin: ($space-s * 2) 0; }
   @media #{$mq-m} { margin: ($space-m * 2) 0; }
   @media #{$mq-l} { margin: ($space-l * 2) 0; }
 
@@ -21,6 +21,10 @@
 
           .line-numbers {
             display: none;
+          }
+
+          @media #{$mq-s} {
+            .line { font-size: 14px; }
           }
         }
       }
