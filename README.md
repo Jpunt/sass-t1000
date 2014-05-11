@@ -6,7 +6,7 @@ sass-t-1000-grid
 **No, this is not another responsive grid system.** It’s more a library. You build the grid yourself, using SASS-mixins. This way you’re free to choose the kind of media-queries or amount of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.
 
 ## Basics
-We’ve got a couple of principles that should be clear to you:
+We’ve got a couple of principles that should be made clear:
 - Put content in columns
 - Put columns in a row
 - Columns are flexible
