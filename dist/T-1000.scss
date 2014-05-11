@@ -20,13 +20,13 @@
   position: relative;
 }
 
-@mixin grid($layout, $columns, $padding) {
+@mixin grid($layout, $columns, $spacing) {
   .row {
-    padding: $padding;
+    padding: $spacing;
   }
 
   .col {
-    padding: $padding;
+    padding: $spacing;
   }
 
   // .m-2, .xl-6, etc
@@ -37,67 +37,67 @@
   }
 }
 
-@mixin properties($padding, $properties, $scale:false) {
+@mixin properties($spacing, $properties, $scale:false) {
   @each $property in $properties {
 
     // .margin, .padding, etc
     @if($scale == false) {
       .#{$property} {
-        #{$property}: $padding;
+        #{$property}: $spacing;
       }
     }
 
     // .margin-double, .padding-double, etc
     @if($scale == double) {
       .#{$property}-double {
-        #{$property}: ($padding * 2);
+        #{$property}: ($spacing * 2);
       }
     }
 
     // .margin-half, .padding-half, etc
     @if($scale == half) {
       .#{$property}-half {
-        #{$property}: ($padding / 2);
+        #{$property}: ($spacing / 2);
       }
     }
 
     // .margin-triple, .padding-triple, etc
     @if($scale == triple) {
       .#{$property}-triple {
-        #{$property}: ($padding * 3);
+        #{$property}: ($spacing * 3);
       }
     }
   }
 }
 
-@mixin properties-for-layout($layout, $padding, $properties, $scale:false) {
+@mixin properties-for-layout($layout, $spacing, $properties, $scale:false) {
   @each $property in $properties {
 
     // .s-margin, .s-padding, etc
     @if($scale == false) {
       .#{$layout}-#{$property} {
-        #{$property}: $padding;
+        #{$property}: $spacing;
       }
     }
 
     // .s-margin-double, .s-padding-double, etc
     @if($scale == double) {
       .#{$layout}-#{$property}-double {
-        #{$property}: ($padding * 2);
+        #{$property}: ($spacing * 2);
       }
     }
 
     // .s-margin-half, .s-padding-half, etc
     @if($scale == half) {
       .#{$layout}-#{$property}-half {
-        #{$property}: ($padding / 2);
+        #{$property}: ($spacing / 2);
       }
     }
 
     // .s-margin-triple, .s-padding-triple, etc
     @if($scale == triple) {
       .#{$layout}-#{$property}-triple {
-        #{$property}: ($padding * 3);
+        #{$property}: ($spacing * 3);
       }
     }
   }
