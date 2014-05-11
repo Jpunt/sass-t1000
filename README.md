@@ -375,8 +375,17 @@ When you're in a situation where you only want some margin in a specific layout,
 
 You can use `double` / `triple` / `half` here as well, like this:
 
+```scss
+@media only screen and (max-width: 399px) {
+  @include properties-for-layout(s, 5px, (margin, padding), double)
+}
 ```
-@include properties-for-layout(m, 8px, margin, double)
+
+```css
+@media only screen and (max-width: 399px) {
+  .s-margin-double { margin: 10px; }
+  .s-padding-double { padding: 10px; }
+}
 ```
 
 ### reset-properties
