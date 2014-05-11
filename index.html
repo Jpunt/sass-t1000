@@ -20,31 +20,49 @@
     </div>
 
     <div class="col s-2 m-3 l-6">
-      <p class="bg-light padding-double"><strong>Yes, this is another responsive grid system.</strong><br/>There are a lot of them these days, but as with a lot of things: they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.</p>
+      <div class="bg-light padding-double">
+        <h3>Yes, this is another responsive grid system.</h3>
+        <p>There are a lot of them these days, but as with a lot of things: they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.</p>
+      </div>
     </div>
 
     <div class="col s-2 m-3 l-6">
-      <p class="bg-light padding-double"><strong>No, this is not another responsive grid system.</strong><br/>It’s more a library. You build the grid yourself, using SASS-mixins. This way you’re free to choose the kind of media-queries or amount of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.</p>
+      <div class="bg-light padding-double">
+        <h3>No, this is not another responsive grid system.</h3>
+        <p>It’s more a library. You build the grid yourself, using SASS-mixins. This way you’re free to choose the kind of media-queries or amount of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row download">
+    <div class="col s-2 m-4 m-prefix-1 l-6 l-prefix-3 padding-top-double padding-bottom-double">
+      <div class="file">
+        <a href="https://raw.githubusercontent.com/Jpunt/sass-t-1000-grid/master/dist/T-1000.scss" download="T-1000.scss"><span>download</span></a>
+      </div>
+
+      <div class="repo padding-top">
+        <p>or view the source at <a href="https://github.com/Jpunt/sass-t-1000-grid">Github</a></p>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col s-2 m-6 l-12">
+    <div class="col s-2 m-6 l-12 s-reset-padding-bottom">
       <h2 class="bg-light padding-double">Basics</h2>
     </div>
 
-    <div class="col s-2 m-2 l-4">
+    <div class="col s-2 m-2 l-4 s-padding-top-half">
       <p class="bg-light padding-double">We’ve got a couple of principles that should be clear to you:</p>
     </div>
 
     <div class="col s-2 m-4 l-8 reset-padding">
-      <div class="col s-1 m-3 l-6"><p class="bg-light padding-double">Put content in columns</p></div>
-      <div class="col s-1 m-3 l-6"><p class="bg-light padding-double">Put columns in a row</p></div>
-      <div class="col s-1 m-3 l-6"><p class="bg-light padding-double">Columns are flexible</p></div>
-      <div class="col s-1 m-3 l-6"><p class="bg-light padding-double">Gutters are fixed</p></div>
-      <div class="col s-1 m-3 l-6"><p class="bg-light padding-double">The space between two columns make a gutter</p></div>
-      <div class="col s-1 m-3 l-6"><p class="bg-light padding-double">The space between a column and a row make a gutter</p></div>
-      <div class="col s-2 m-6 l-12"><p class="bg-light padding-double">With great power, comes great responsibility. Only include what you need!</p></div>
+      <div class="col s-2 m-3 l-6 s-reset-padding-bottom"><p class="bg-light padding-double">Put content in columns</p></div>
+      <div class="col s-2 m-3 l-6 s-reset-padding-bottom s-padding-top-half"><p class="bg-light padding-double">Put columns in a row</p></div>
+      <div class="col s-2 m-3 l-6 s-reset-padding-bottom s-padding-top-half"><p class="bg-light padding-double">Columns are flexible</p></div>
+      <div class="col s-2 m-3 l-6 s-reset-padding-bottom s-padding-top-half"><p class="bg-light padding-double">Gutters are fixed</p></div>
+      <div class="col s-2 m-3 l-6 s-reset-padding-bottom s-padding-top-half"><p class="bg-light padding-double">The padding of two columns make a gutter</p></div>
+      <div class="col s-2 m-3 l-6 s-reset-padding-bottom s-padding-top-half"><p class="bg-light padding-double">The padding of a column and a row make a gutter</p></div>
+      <div class="col s-2 m-6 l-12 s-padding-top-half"><p class="bg-light padding-double">With great power, comes great responsibility. Only include what you need!</p></div>
     </div>
   </div>
 
@@ -53,11 +71,11 @@
       <h2 class="bg-light padding-double">Mixins</h2>
     </div>
 
-    <div class="col s-2 m-1 l-3">
+    <div class="col s-2 m-2 l-3">
       <h3 class="bg-light padding-double">grid</h3>
     </div>
 
-    <div class="col s-2 m-5 l-9">
+    <div class="col s-2 m-4 l-9">
       <div class="bg-light padding-double">
         <p>Let&#39;s start with a grid of 12 columns. And while we&#39;re on it, let&#39;s split them up in &quot;s&quot;, &quot;m&quot; and &quot;l&quot; layouts.</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-basic.scss"></script></div>
@@ -79,11 +97,11 @@
   </div>
 
   <div class="row">
-    <div class="col s-2 m-1 l-3">
+    <div class="col s-2 m-2 l-3">
       <h3 class="bg-light padding-double">properties</h3>
     </div>
 
-    <div class="col s-2 m-5 l-9">
+    <div class="col s-2 m-4 l-9">
       <div class="bg-light padding-double">
         <p>Columns are not the only flexible pieces in the puzzle of RWD. Often you find yourself setting properties (like margins, paddings, etc) that need different sizes for different layouts. You can do this with specific CSS, but how about this:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties.scss"></script></div>
@@ -95,17 +113,17 @@
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties-double.scss"></script></div>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties-double.css"></script></div>
 
-        <p><code>triple</code> and <code>half</code> are also available. In my experience: When you need any more or less than this, there&#39;s probably something wrong with the design. When you experience a desperate need for more, file a bug and let me know.</p>
+        <p><code>triple</code> and <code>half</code> are also available. In my experience: When you need any more or less than this, there&#39;s probably something wrong with the design. When you experience a desperate need for more, <a href="https://github.com/Jpunt/sass-t-1000-grid/issues/new">file a bug</a> and let me know.</p>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col s-2 m-1 l-3">
+    <div class="col s-2 m-2 l-3">
       <h3 class="bg-light padding-double">properties-for-layout</h3>
     </div>
 
-    <div class="col s-2 m-5 l-9">
+    <div class="col s-2 m-4 l-9">
       <div class="bg-light padding-double">
         <p>When you&#39;re in a situation where you only want some margin in a specific layout, use <code>properties-for-layout</code>:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties-for-layout.scss"></script></div>
@@ -117,11 +135,11 @@
   </div>
 
   <div class="row">
-    <div class="col s-2 m-1 l-3">
+    <div class="col s-2 m-2 l-3">
       <h3 class="bg-light padding-double">reset-properties</h3>
     </div>
 
-    <div class="col s-2 m-5 l-9">
+    <div class="col s-2 m-4 l-9">
       <div class="bg-light padding-double">
         <p>There&#39;re cases that you don&#39;t want certain properties to be set, for instance by one of the above mixins. For this, you can do this:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=reset-properties.scss"></script></div>
@@ -131,11 +149,11 @@
   </div>
 
   <div class="row">
-    <div class="col s-2 m-1 l-3">
+    <div class="col s-2 m-2 l-3">
       <h3 class="bg-light padding-double">reset-properties-for-layout</h3>
     </div>
 
-    <div class="col s-2 m-5 l-9">
+    <div class="col s-2 m-4 l-9">
       <div class="bg-light padding-double">
         <p>Or when you want properties to reset for certain layouts only, you can do this:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=reset-properties-for-layout.scss"></script></div>
