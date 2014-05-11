@@ -1,0 +1,33 @@
+.gist-embed {
+  @media #{$mq-s} { margin: ($space-s * 2) 0; font-size: 0.9em; }
+  @media #{$mq-m} { margin: ($space-m * 2) 0; }
+  @media #{$mq-l} { margin: ($space-l * 2) 0; }
+
+  .gist {
+    .gist-file {
+      margin-bottom: 0;
+      border-radius: 0;
+      border-width: 3px;
+      border-color: lighten($bg-medium, 3%);
+
+      .gist-data {
+        border-bottom: none;
+
+        .file-data {
+          overflow: auto;
+          max-height: 17em;
+          @media #{$mq-s} { max-height: 5.6em; }
+          background-color: lighten($bg-medium, 5%);
+
+          .line-numbers {
+            display: none;
+          }
+        }
+      }
+
+      .gist-meta {
+        background: lighten($bg-medium, 3%);
+      }
+    }
+  }
+}

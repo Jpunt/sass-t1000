@@ -1,0 +1,48 @@
+@import '../../dist/T-1000.scss';
+
+$space-s: 4px;
+$space-m: 8px;
+$space-l: 12px;
+
+$mq-s: "only screen and (max-width:689px)";
+$mq-m: "only screen and (min-width:690px)";
+$mq-l: "only screen and (min-width:1000px)";
+
+$scalable-props-single: (padding, margin, padding-top);
+$scalable-props-half:   (padding-top);
+$scalable-props-double: (padding, padding-left, padding-right, padding-top, padding-bottom, margin-top, margin-bottom);
+@include reset-properties((padding, margin-bottom));
+
+@media #{$mq-s} {
+  @include grid(s, 2, $space-s, prefix);
+  @include properties($space-s, $scalable-props-single);
+  @include properties($space-s, $scalable-props-double, double);
+  @include properties-for-layout(s, $space-s, $scalable-props-half, half);
+  @include reset-properties-for-layout(s, (padding-bottom, padding-top));
+
+  .row { padding-top: ($space-s * 4); padding-bottom: ($space-s * 4); }
+}
+
+@media #{$mq-m} {
+  @include grid(m, 6, $space-m, prefix);
+  @include properties($space-m, $scalable-props-single);
+  @include properties($space-m, $scalable-props-double, double);
+  @include properties-for-layout(m, $space-m, $scalable-props-half, half);
+
+  .row { width: 98%; }
+}
+
+@media #{$mq-l} {
+  @include grid(l, 12, $space-l, prefix);
+  @include properties($space-l, $scalable-props-single);
+  @include properties($space-l, $scalable-props-double, double);
+  @include properties-for-layout(l, $space-l, $scalable-props-half, half);
+
+  .row { width: 90%; }
+}
+
+.row {
+  margin: 0 auto;
+  min-width: 240px;
+  max-width: 1600px;
+}

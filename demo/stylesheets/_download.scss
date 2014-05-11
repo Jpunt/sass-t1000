@@ -1,0 +1,61 @@
+.download {
+  text-align: center;
+
+  .file {
+    font-size: 1.7em;
+    height: 2em;
+    overflow: hidden;
+    padding-top: 5px;
+    margin-top: -5px;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      background-color: lighten($green, 5%);
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      @include transition(all 0.2s $ease-out-expo);
+
+      span {
+        vertical-align: sub;
+      }
+
+      &,
+      &:active {
+        border-bottom: 0px solid darken($green, 20%);
+        margin-top: 0;
+      }
+
+      &:hover {
+        margin-top: -5px;
+        border-bottom-width: 5px;
+      }
+    }
+  }
+
+  .repo {
+    font-size: 0.5em;
+    @include transition(color 0.1s);
+    color: lighten($text, 30%);
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  &:hover {
+    .file a {
+      background-color: $green;
+    }
+    .repo {
+      color: $text;
+    }
+  }
+}

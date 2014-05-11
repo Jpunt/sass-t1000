@@ -1,0 +1,21 @@
+$bg-medium: #f0f0f0;
+$bg-light: #fdfdfd;
+$text: #333;
+$green: #2ee3a5;
+
+body {
+  background-color: $bg-medium;
+  color: $text;
+
+  code {
+    background-color: #e4e4e4;
+  }
+}
+
+.bg-light {
+  background-color: $bg-light;
+}
+
+.row {
+  border-bottom: 1px solid #e4e4e4;
+}
