@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         tasks: ['jasmine_node']
       },
       sass: {
-        files: ['demo/**/*.scss'],
+        files: ['demo/**/*.scss', 'src/**/*.scss'],
         tasks: ['sass:demo']
       },
       copy: {
@@ -68,6 +68,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jasmine-node');
   grunt.loadNpmTasks('grunt-markdown');
 
-  grunt.registerTask('default', ['jasmine_node', 'concat', 'sass', 'copy', 'watch']);
+  grunt.registerTask('default', ['concat', 'sass', 'copy', 'jasmine_node', 'watch']);
   grunt.registerTask('test', ['jasmine_node']);
 };
