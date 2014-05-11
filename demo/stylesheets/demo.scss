@@ -159,7 +159,7 @@ body {
           background-color: lighten($bg-medium, 5%);
 
           .line-numbers {
-            background-color: lighten($bg-medium, 4.5%);
+            display: none;
           }
         }
       }
