@@ -17,14 +17,9 @@
       color: white;
       text-decoration: none;
       text-transform: uppercase;
-      @include transition(all 0.2s $ease-out-expo);
+      @include transition(all 0.1s);
 
-      span {
-        vertical-align: sub;
-      }
-
-      &,
-      &:active {
+      & {
         border-bottom: 0px solid darken($green, 20%);
         margin-top: 0;
       }
@@ -32,6 +27,10 @@
       &:hover {
         margin-top: -5px;
         border-bottom-width: 5px;
+      }
+
+      span {
+        vertical-align: sub;
       }
     }
   }
