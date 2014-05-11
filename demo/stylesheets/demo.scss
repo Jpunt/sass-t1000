@@ -1,50 +1,46 @@
 @import 'bourbon/bourbon';
-@import 'reset.css';
+@import 'reset.scss';
 @import '../../dist/T-1000.scss';
 
 /*
  * GRID
  */
-* {
-  margin: 0;
-  padding: 0;
+$space-s: 5px;
+$space-m: 8px;
+$space-l: 12px;
+
+$mq-s: "only screen and (max-width:599px)";
+$mq-m: "only screen and (min-width:600px)";
+$mq-l: "only screen and (min-width:1000px)";
+
+$scalable-props-single: (padding, margin, padding-top);
+$scalable-props-double: (padding, padding-left, padding-right, padding-top, padding-bottom, margin-top, margin-bottom);
+@include reset-properties((padding, margin-bottom));
+
+@media #{$mq-s} {
+  @include grid(s, 2, $space-s, prefix);
+  @include properties($space-s, $scalable-props-single);
+  @include properties($space-s, $scalable-props-double, double);
+}
+
+@media #{$mq-m} {
+  @include grid(m, 6, $space-m, prefix);
+  @include properties($space-m, $scalable-props-single);
+  @include properties($space-m, $scalable-props-double, double);
+  .row { width: 98%; }
+}
+
+@media #{$mq-l} {
+  @include grid(l, 12, $space-l, prefix);
+  @include properties($space-l, $scalable-props-single);
+  @include properties($space-l, $scalable-props-double, double);
+  .row { width: 90%; }
 }
 
 .row {
   margin: 0 auto;
   min-width: 320px;
   max-width: 1024px;
-}
-
-@include reset-properties((padding, margin-bottom));
-
-@media only screen and (max-width:599px) {
-  $space: 5px;
-  @include grid(s, 2, $space);
-  @include properties($space, (padding, margin));
-  @include properties($space, (padding padding-left padding-right), double);
-}
-
-@media only screen and (min-width:600px) {
-  .row {
-    width: 98%;
-  }
-
-  $space: 8px;
-  @include grid(m, 6, $space);
-  @include properties($space, (padding, margin));
-  @include properties($space, (padding padding-left padding-right), double);
-}
-
-@media only screen and (min-width:1000px) {
-  .row {
-    width: 90%;
-  }
-
-  $space: 12px;
-  @include grid(l, 12, $space);
-  @include properties($space, (padding, margin));
-  @include properties($space, (padding padding-left padding-right), double);
 }
 
 /*
@@ -126,27 +122,60 @@ body {
 .download {
   text-align: center;
 
-  .primary {
+  .file {
     font-size: 1.7em;
+    height: 2em;
+    overflow: hidden;
+    padding-top: 5px;
+    margin-top: -5px;
 
     a {
       display: block;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      background-color: lighten($green, 5%);
       color: white;
-      background-color: $green;
       text-decoration: none;
       text-transform: uppercase;
-      @include transition (all 0.15s ease-in-out);
+      @include transition(all 0.2s $ease-out-expo);
+
+      span {
+        vertical-align: sub;
+      }
+
+      &,
+      &:active {
+        border-bottom: 0px solid darken($green, 20%);
+        margin-top: 0;
+      }
 
       &:hover {
+        margin-top: -5px;
+        border-bottom-width: 5px;
       }
     }
   }
 
-  .secondary {
-    padding-top: 0.2em;
+  .repo {
     font-size: 0.5em;
+    @include transition(color 0.1s);
+    color: lighten($text, 30%);
 
     a {
+      color: inherit;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  &:hover {
+    .file a {
+      background-color: $green;
+    }
+    .repo {
       color: $text;
     }
   }

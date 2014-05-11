@@ -27,6 +27,18 @@ describe('Mixins', function() {
     it('compiles for: layout: m | columns: 6 | spacing: 8px', function() {
       expect(scss('@include grid(m, 6, 8px);')).toEqual(fixture('grid-m-6-8px.css'));
     });
+
+    it('compiles for: layout: s | columns: 2 | spacing: 5px | options: prefix', function() {
+      expect(scss('@include grid(s, 2, 5px, prefix);')).toEqual(fixture('grid-s-2-5px-prefix.css'));
+    });
+
+    it('compiles for: layout: s | columns: 2 | spacing: 5px | options: suffix', function() {
+      expect(scss('@include grid(s, 2, 5px, suffix);')).toEqual(fixture('grid-s-2-5px-suffix.css'));
+    });
+
+    it('compiles for: layout: s | columns: 2 | spacing: 5px | options: (prefix, suffix)', function() {
+      expect(scss('@include grid(s, 2, 5px, (prefix, suffix));')).toEqual(fixture('grid-s-2-5px-prefix-suffix.css'));
+    });
   });
 
   describe('properties', function() {

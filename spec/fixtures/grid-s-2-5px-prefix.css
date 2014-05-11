@@ -1,0 +1,23 @@
+.row {
+  padding: 5px;
+}
+
+.col {
+  padding: 5px;
+}
+
+.s-1 {
+  width: 50%;
+}
+
+.s-2 {
+  width: 100%;
+}
+
+.s-prefix-1 {
+  margin-left: 50%;
+}
+
+.s-prefix-2 {
+  margin-left: 100%;
+}

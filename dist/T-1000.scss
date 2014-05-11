@@ -24,7 +24,7 @@
   @return (100% / $columns) * $column;
 }
 
-@mixin grid($layout, $columns, $spacing) {
+@mixin grid($layout, $columns, $spacing, $options:false) {
   .row {
     padding: $spacing;
   }
@@ -37,6 +37,26 @@
   @for $i from 1 through $columns {
     .#{$layout}-#{$i} {
       width: column-width($columns, $i);
+    }
+  }
+
+  @each $option in $options {
+    // .m-prefix-2, .xl-prefix-4, etc
+    @if($option == prefix) {
+      @for $i from 1 through $columns {
+        .#{$layout}-prefix-#{$i} {
+          margin-left: column-width($columns, $i);
+        }
+      }
+    }
+
+    // .m-suffix-2, .xl-suffix-4, etc
+    @if($option == suffix) {
+      @for $i from 1 through $columns {
+        .#{$layout}-suffix-#{$i} {
+          margin-right: column-width($columns, $i);
+        }
+      }
     }
   }
 }
