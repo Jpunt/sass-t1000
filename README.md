@@ -303,7 +303,7 @@ This will generate classes with appropriate margins:
 }
 ```
 
-When you use these classes instead of specific CSS you'll notice that things get more consistent, especially in combination with the grid. But of course these classes aren't enough for all cases. That's why we've got some extra onces, which are still in balance with the overall sizing of things:
+When you use these classes instead of specific CSS you'll notice that things get more consistent, especially in combination with the grid. But of course these classes aren't enough for all cases. That's why we've got some modifiers, which are still in balance with the overall sizing of things:
 
 ```scss
 @media only screen and (max-width: 399px) {
