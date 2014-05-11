@@ -20,6 +20,10 @@
   position: relative;
 }
 
+@function column-width($columns, $column) {
+  @return (100% / $columns) * $column;
+}
+
 @mixin grid($layout, $columns, $spacing) {
   .row {
     padding: $spacing;
@@ -32,7 +36,7 @@
   // .m-2, .xl-6, etc
   @for $i from 1 through $columns {
     .#{$layout}-#{$i} {
-      width: (100% / $columns) * $i;
+      width: column-width($columns, $i);
     }
   }
 }
