@@ -5,15 +5,16 @@
 /*
  * GRID
  */
-$space-s: 3px;
+$space-s: 4px;
 $space-m: 8px;
 $space-l: 12px;
 
-$mq-s: "only screen and (max-width:599px)";
-$mq-m: "only screen and (min-width:600px)";
+$mq-s: "only screen and (max-width:689px)";
+$mq-m: "only screen and (min-width:690px)";
 $mq-l: "only screen and (min-width:1000px)";
 
 $scalable-props-single: (padding, margin, padding-top);
+$scalable-props-half:   (padding-top);
 $scalable-props-double: (padding, padding-left, padding-right, padding-top, padding-bottom, margin-top, margin-bottom);
 @include reset-properties((padding, margin-bottom));
 
@@ -21,12 +22,18 @@ $scalable-props-double: (padding, padding-left, padding-right, padding-top, padd
   @include grid(s, 2, $space-s, prefix);
   @include properties($space-s, $scalable-props-single);
   @include properties($space-s, $scalable-props-double, double);
+  @include properties-for-layout(s, $space-s, $scalable-props-half, half);
+  @include reset-properties-for-layout(s, (padding-bottom, padding-top));
+
+  .row { padding-top: ($space-s * 4); padding-bottom: ($space-s * 4); }
 }
 
 @media #{$mq-m} {
   @include grid(m, 6, $space-m, prefix);
   @include properties($space-m, $scalable-props-single);
   @include properties($space-m, $scalable-props-double, double);
+  @include properties-for-layout(m, $space-m, $scalable-props-half, half);
+
   .row { width: 98%; }
 }
 
@@ -34,13 +41,15 @@ $scalable-props-double: (padding, padding-left, padding-right, padding-top, padd
   @include grid(l, 12, $space-l, prefix);
   @include properties($space-l, $scalable-props-single);
   @include properties($space-l, $scalable-props-double, double);
+  @include properties-for-layout(l, $space-l, $scalable-props-half, half);
+
   .row { width: 90%; }
 }
 
 .row {
   margin: 0 auto;
-  min-width: 320px;
-  max-width: 1024px;
+  min-width: 240px;
+  max-width: 1600px;
 }
 
 /*
@@ -59,12 +68,28 @@ h1 {
   text-align: center;
 }
 
-p {
-  line-height: 1.5em;
+h2 {
+  @media #{$mq-s} { font-size: 1.4em; }
+  @media #{$mq-m} { font-size: 1.6em; }
+  @media #{$mq-l} { font-size: 1.8em; }
+  line-height: 1.3em;
+}
+
+h3 {
+  @media #{$mq-s} { font-size: 1.0em; }
+  @media #{$mq-m} { font-size: 1.05em; }
+  @media #{$mq-l} { font-size: 1.1em; }
+  line-height: 1.3em;
+}
+
+p, code {
+  @media #{$mq-s} { font-size: 0.9em; }
+  @media #{$mq-m} { font-size: 1.0em; }
+  @media #{$mq-l} { font-size: 1.05em; }
+  line-height: 1.7em;
 }
 
 code {
-  font-size: 1em;
   padding: 0.2em 0.4em
 }
 
@@ -102,7 +127,10 @@ body {
  * Code
  */
 .gist-embed {
-  margin: 1em 0;
+  @media #{$mq-s} { margin: ($space-s * 2) 0; }
+  @media #{$mq-m} { margin: ($space-m * 2) 0; }
+  @media #{$mq-l} { margin: ($space-l * 2) 0; }
+  font-size: 0.9em;
 
   .gist {
     .gist-file {
@@ -110,8 +138,9 @@ body {
     }
 
     .file-data {
-      max-height: 17em;
       overflow: auto;
+      max-height: 17em;
+      @media #{$mq-s} { max-height: 5em; }
     }
   }
 }

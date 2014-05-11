@@ -11,8 +11,8 @@ We’ve got a couple of principles that should be clear to you:
 - Put columns in a row
 - Columns are flexible
 - Gutters are fixed
-- The space between two columns make a gutter
-- The space between a column and a row make a gutter
+- The padding of two columns make a gutter
+- The padding of a column and a row make a gutter
 - With great power, comes great responsibility. Only include what you need!
 
 ## Mixins
@@ -238,7 +238,7 @@ When you use these classes instead of specific CSS you'll notice that things get
 }
 ```
 
-`triple` and `half` are also available. In my experience: When you need any more or less than this, there's probably something wrong with the design. When you experience a desperate need for more, file a bug and let me know.
+`triple` and `half` are also available. In my experience: When you need any more or less than this, there's probably something wrong with the design. When you experience a desperate need for more, [file a bug](https://github.com/Jpunt/sass-t-1000-grid/issues/new) and let me know.
 
 
 ### properties-for-layout
