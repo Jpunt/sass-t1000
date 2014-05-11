@@ -1,9 +1,9 @@
 sass-t-1000-grid
 ================
 
-**Yes, this is another responsive grid system.** There are a lot of them these days, but as with a lot of things: they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.
+**Yes, this is another responsive grid system.** There are a lot of them these days, but as with a lot of things, they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.
 
-**No, this is not another responsive grid system.** It’s more a library. You build the grid yourself, using SASS-mixins. This way you’re free to choose the kind of media-queries or amount of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.
+**No, this is not another responsive grid system.** It’s more a library. You build the grid yourself using SASS-mixins. This way you’re free to choose the kind of media queries or number of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.
 
 ## Basics
 We’ve got a couple of principles that should be made clear:
@@ -13,14 +13,14 @@ We’ve got a couple of principles that should be made clear:
 - Gutters are fixed
 - The padding of two columns make a gutter
 - The padding of a column and a row make a gutter
-- With great power, comes great responsibility. Only include what you need!
+- With great power comes great responsibility. Only include what you need!
 
 ## Mixins
 
 ### grid
-*Note: Below are some examples of how to use the grid. It's how I like to do it. If you wanna get fancy and use em-based media-queries or get oldscool and call the layouts “mobile” and “desktop”: Knock yourself out, it's your grid. Let the content do the talking and include what's needed for that. Check the [styles](https://github.com/Jpunt/sass-t-1000-grid/blob/master/demo/stylesheets/_layout.scss) of the [demo-page](http://jpunt.github.io/sass-t-1000-grid/) for a real-life example.*
+*Note: Below are some examples of how to use the grid. It's how I like to do it. If you wanna get fancy and use em-based media queries or get old-school and call the layouts “mobile” and “desktop”, knock yourself out; it's your grid. Let the content do the talking and include what's needed for that. Check the [styles](https://github.com/Jpunt/sass-t-1000-grid/blob/master/demo/stylesheets/_layout.scss) of the [demo-page](http://jpunt.github.io/sass-t-1000-grid/) for a real-life example.*
 
-Let's start with a grid of 12 columns. And while we're on it, let's split them up in a couple of layouts:
+Let's start with a grid of 12 columns. And while we're at it, let's split them into a couple of layouts:
 
 ```scss
 @media only screen and (max-width: 399px) {
@@ -94,7 +94,7 @@ This will generate classes with appropriate widths and paddings:
 }
 ```
 
-So, if you have some elements that you'd like to layout, you can do things like this:
+So if you have some elements that you'd like to lay out, you can do things like this:
 
 ```html
 <div class="row">
@@ -104,7 +104,7 @@ So, if you have some elements that you'd like to layout, you can do things like 
 </div>
 ```
 
-This way the elements will be at full width for `s`, they're equally divided for `l` layout and something special for `m`. But c'mon, 12 columns and such a large gutter for small screens? That's insane. Let's clean that up and give large screens a little bit more air as well:
+This way the elements will be at full width for `s`, equally divided for `l` layout and something special for `m`. But c'mon, 12 columns and such a large gutter for small screens? That's insane. Let's clean that up and give large screens a bit more breathing room as well:
 
 ```scss
 @media only screen and (max-width: 399px) {
@@ -268,7 +268,7 @@ Obviously, this is quite a lot of generated css, so enable only what you need (t
 
 
 ### properties
-Columns are not the only flexible pieces in the puzzle of RWD. Often you find yourself setting properties (like margins, paddings, etc) that need different sizes for different layouts. You can do this with specific CSS, but how about this:
+Columns are not the only flexible pieces of the puzzle of RWD. Often you find yourself setting properties (like margins, paddings, etc) that need different sizes for different layouts. You can do this with specific CSS, but how about this:
 
 ```scss
 @media only screen and (max-width: 399px) {
@@ -303,7 +303,7 @@ This will generate classes with appropriate margins:
 }
 ```
 
-When you use these classes instead of specific CSS you'll notice that things get more consistent, especially in combination with the grid. But of course these classes aren't enough for all cases. That's why we've got some extra onces, which are still in balance with the overall sizing of things:
+When you use these classes instead of specific CSS you'll notice that things get more consistent, especially in combination with the grid. But of course these classes aren't enough for all cases. That's why we've got some extra ones, which are still relative to the overall sizing of things:
 
 ```scss
 @media only screen and (max-width: 399px) {
@@ -336,7 +336,7 @@ When you use these classes instead of specific CSS you'll notice that things get
 }
 ```
 
-`triple` and `half` are also available. In my experience: When you need any more or less than this, there's probably something wrong with the design. When you experience a desperate need for more, [file a bug](https://github.com/Jpunt/sass-t-1000-grid/issues/new) and let me know.
+`triple` and `half` are also available. In my experience, if you find yourself needing any more or less than this, there's probably something wrong with the design. If you experience a desperate need for more, [file a bug](https://github.com/Jpunt/sass-t-1000-grid/issues/new) and let me know.
 
 
 ### properties-for-layout
@@ -389,7 +389,7 @@ You can use `double` / `triple` / `half` here as well, like this:
 ```
 
 ### reset-properties
-There're cases that you don't want certain properties to be set, for instance by one of the above mixins. For this, you can do this:
+There are situations when you don't want certain properties to be set, for instance by one of the above mixins. For these cases, you can do this:
 
 ```scss
 @include reset-properties((margin, padding));
