@@ -22,14 +22,14 @@
     <div class="col s-2 m-3 l-6">
       <div class="bg-light padding-double">
         <h3>Yes, this is another responsive grid system.</h3>
-        <p>There are a lot of them these days, but as with a lot of things: they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.</p>
+        <p>There are a lot of them these days, but as with a lot of things, they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.</p>
       </div>
     </div>
 
     <div class="col s-2 m-3 l-6">
       <div class="bg-light padding-double">
         <h3>No, this is not another responsive grid system.</h3>
-        <p>It’s more a library. You build the grid yourself, using SASS-mixins. This way you’re free to choose the kind of media-queries or amount of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.</p>
+        <p>It&rsquo;s more a library. You build the grid yourself using SASS-mixins. This way you’re free to choose the kind of media queries or number of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.</p>
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@
       <div class="col s-2 m-3 l-6 s-reset-padding-bottom s-padding-top-half"><p class="bg-light padding-double">Gutters are fixed</p></div>
       <div class="col s-2 m-3 l-6 s-reset-padding-bottom s-padding-top-half"><p class="bg-light padding-double">The padding of two columns make a gutter</p></div>
       <div class="col s-2 m-3 l-6 s-reset-padding-bottom s-padding-top-half"><p class="bg-light padding-double">The padding of a column and a row make a gutter</p></div>
-      <div class="col s-2 m-6 l-12 s-padding-top-half"><p class="bg-light padding-double">With great power, comes great responsibility. Only include what you need!</p></div>
+      <div class="col s-2 m-6 l-12 s-padding-top-half"><p class="bg-light padding-double">With great power comes great responsibility. Only include what you need!</p></div>
     </div>
   </div>
 
@@ -77,18 +77,18 @@
 
     <div class="col s-2 m-4 l-9">
       <div class="bg-light padding-double">
-        <p><em>Note: Below are some examples of how to use the grid. It&#39;s how I like to do it. If you wanna get fancy and use em-based media-queries or get oldscool and call the layouts &ldquo;mobile&rdquo; and &ldquo;desktop&rdquo;: Knock yourself out, it&#39;s your grid. Let the content do the talking and include what&#39;s needed for that. Check the <a href="https://github.com/Jpunt/sass-t-1000-grid/blob/master/demo/stylesheets/_layout.scss">styles</a> of this page for a real-life example.</em></p>
-        <p>Let&#39;s start with a grid of 12 columns. And while we&#39;re on it, let&#39;s split them up in a couple of layouts:</p>
+        <p><em>Note: Below are some examples of how to use the grid. It&#39;s how I like to do it. If you wanna get fancy and use em-based media queries or get old-school and call the layouts &ldquo;mobile&rdquo; and &ldquo;desktop&rdquo;, knock yourself out; it&#39;s your grid. Let the content do the talking and include what&#39;s needed for that. Check the <a href="https://github.com/Jpunt/sass-t-1000-grid/blob/master/demo/stylesheets/_layout.scss">styles</a> of this page for a real-life example.</em></p>
+        <p>Let&#39;s start with a grid of 12 columns. And while we're at it, let&#39;s split them into a couple of layouts:</p>
 
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-basic.scss"></script></div>
 
         <p>This will generate classes with appropriate widths and paddings:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-basic.css"></script></div>
 
-        <p>So, if you have some elements that you&#39;d like to layout, you can do things like this:</p>
+        <p>So if you have some elements that you&#39;d like to lay out, you can do things like this:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-basic.html"></script></div>
 
-        <p>This way the elements will be at full width for <code>s</code>, they&#39;re equally divided for <code>l</code> layout and something special for <code>m</code>. But c&#39;mon, 12 columns and such a large gutter for small screens? That&#39;s insane. Let&#39;s clean that up and give large screens a little bit more air as well:</p>
+        <p>This way the elements will be at full width for <code>s</code>, equally divided for <code>l</code> layout and something special for <code>m</code>. But c&#39;mon, 12 columns and such a large gutter for small screens? That&#39;s insane. Let&#39;s clean that up and give large screens a bit more breathing room as well:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-better.scss"></script></div>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-better.css"></script></div>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-better.html"></script></div>
@@ -107,17 +107,17 @@
 
     <div class="col s-2 m-4 l-9">
       <div class="bg-light padding-double">
-        <p>Columns are not the only flexible pieces in the puzzle of RWD. Often you find yourself setting properties (like margins, paddings, etc) that need different sizes for different layouts. You can do this with specific CSS, but how about this:</p>
+        <p>Columns are not the only flexible pieces of the puzzle of RWD. Often you find yourself setting properties (like margins, paddings, etc) that need different sizes for different layouts. You can do this with specific CSS, but how about this:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties.scss"></script></div>
 
         <p>This will generate classes with appropriate margins:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties.css"></script></div>
 
-        <p>When you use these classes instead of specific CSS you&#39;ll notice that things get more consistent, especially in combination with the grid. But of course these classes aren&#39;t enough for all cases. That&#39;s why we&#39;ve got some modifiers, which are still in balance with the overall sizing of things:</p>
+        <p>When you use these classes instead of specific CSS you&#39;ll notice that things get more consistent, especially in combination with the grid. But of course these classes aren&#39;t enough for all cases. That&#39;s why we&#39;ve got some extra ones, which are still relative with the overall sizing of things:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties-double.scss"></script></div>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties-double.css"></script></div>
 
-        <p><code>triple</code> and <code>half</code> are also available. In my experience: When you need any more or less than this, there&#39;s probably something wrong with the design. When you experience a desperate need for more, <a href="https://github.com/Jpunt/sass-t-1000-grid/issues/new">file a bug</a> and let me know.</p>
+        <p><code>triple</code> and <code>half</code> are also available. In my experience, if you find yourself needing any more or less than this, there&#39;s probably something wrong with the design. If you experience a desperate need for more, <a href="https://github.com/Jpunt/sass-t-1000-grid/issues/new">file a bug</a> and let me know.</p>
       </div>
     </div>
   </div>
@@ -147,7 +147,7 @@
 
     <div class="col s-2 m-4 l-9">
       <div class="bg-light padding-double">
-        <p>There&#39;re cases that you don&#39;t want certain properties to be set, for instance by one of the above mixins. For this, you can do this:</p>
+        <p>There are situations when you don&#39;t want certain properties to be set, for instance by one of the above mixins. For these cases, you can do this:</p>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=reset-properties.scss"></script></div>
         <div class="gist-embed reset-margin-bottom"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=reset-properties.css"></script></div>
       </div>
