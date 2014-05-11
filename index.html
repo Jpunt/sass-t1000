@@ -77,7 +77,9 @@
 
     <div class="col s-2 m-4 l-9">
       <div class="bg-light padding-double">
-        <p>Let&#39;s start with a grid of 12 columns. And while we&#39;re on it, let&#39;s split them up in &quot;s&quot;, &quot;m&quot; and &quot;l&quot; layouts.</p>
+        <p><em>Note: Below are some examples of how to use the grid. It&#39;s how I like to do it. If you wanna get fancy and use em-based media-queries or get oldscool and call the layouts &ldquo;mobile&rdquo; and &ldquo;desktop&rdquo;: Knock yourself out, it&#39;s your grid. Let the content do the talking and include what&#39;s needed for that.</em></p>
+        <p>Let&#39;s start with a grid of 12 columns. And while we&#39;re on it, let&#39;s split them up in a couple of layouts:</p>
+
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-basic.scss"></script></div>
 
         <p>This will generate classes with appropriate widths and paddings:</p>
@@ -91,7 +93,9 @@
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-better.css"></script></div>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-better.html"></script></div>
 
-        <p>You wanna get fancy and use em-based media-queries? Sure, it&#39;s your layout.</p>
+        <p>You can also enable prefixes and suffixes to leave extra room before or after columns:</p>
+        <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-prefix.scss"></script></div>
+        <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=grid-prefix.css"></script></div>
       </div>
     </div>
   </div>
@@ -129,7 +133,9 @@
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties-for-layout.scss"></script></div>
         <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties-for-layout.css"></script></div>
 
-        <p>You can use <code>double</code> / <code>triple</code> / <code>half</code> here as well, like this: <code>@include properties-for-layout(m, 5px, margin, double)</code></p>
+        <p>You can use <code>double</code> / <code>triple</code> / <code>half</code> here as well, like this:
+        <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties-for-layout-double.scss"></script></div>
+        <div class="gist-embed"><script src="https://gist.github.com/Jpunt/17ed46a2ef50771a9265.js?file=properties-for-layout-double.css"></script></div>
       </div>
     </div>
   </div>
