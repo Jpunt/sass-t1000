@@ -8,17 +8,17 @@ $mq-s: "only screen and (max-width:689px)";
 $mq-m: "only screen and (min-width:690px)";
 $mq-l: "only screen and (min-width:1000px)";
 
-$scalable-props-single: (margin, padding, padding-top, padding-bottom);
-$scalable-props-half:   (padding-top);
-$scalable-props-double: (padding, padding-left, padding-right, padding-top, padding-bottom, margin-top, margin-bottom);
+$scalable-props-single: (padding-top, padding-bottom);
+$scalable-props-double: (padding, padding-top, padding-bottom);
 @include reset-properties((padding, padding-top, padding-bottom, margin-bottom));
 
 @media #{$mq-s} {
   @include grid(s, 2, $space-s, prefix);
   @include properties($space-s, $scalable-props-single);
   @include properties($space-s, $scalable-props-double, double);
-  @include properties-for-layout(s, $space-s, $scalable-props-half, half);
-  @include reset-properties-for-layout(s, (padding-bottom, padding-top));
+
+  @include properties-for-layout(s, $space-s, padding-top, half);
+  @include reset-properties-for-layout(s, padding-bottom);
 
   .row { padding-top: ($space-s * 4); padding-bottom: ($space-s * 4); }
 }
@@ -27,7 +27,6 @@ $scalable-props-double: (padding, padding-left, padding-right, padding-top, padd
   @include grid(m, 6, $space-m, prefix);
   @include properties($space-m, $scalable-props-single);
   @include properties($space-m, $scalable-props-double, double);
-  @include properties-for-layout(m, $space-m, $scalable-props-half, half);
 
   .row { width: 98%; }
 }
@@ -36,7 +35,6 @@ $scalable-props-double: (padding, padding-left, padding-right, padding-top, padd
   @include grid(l, 12, $space-l, prefix);
   @include properties($space-l, $scalable-props-single);
   @include properties($space-l, $scalable-props-double, double);
-  @include properties-for-layout(l, $space-l, $scalable-props-half, half);
 
   .row { width: 90%; }
 }
