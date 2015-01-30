@@ -1,6 +1,6 @@
 {
   "name": "sass-t-1000-grid",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A responsive grid system, based on SASS-mixins",
   "main": "Gruntfile.js",
   "scripts": {

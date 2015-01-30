@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: ['src/base.scss', 'src/mixins.scss'],
-        dest: 'dist/T-1000.scss'
+        dest: 'T-1000.scss'
       }
     },
 
