@@ -1,0 +1,23 @@
+{
+  "name": "sass-t-1000-grid",
+  "version": "0.1.4",
+  "homepage": "https://github.com/Jpunt/sass-t-1000-grid",
+  "authors": [
+    "Jasper Haggenburg <jasperh@q42.nl>"
+  ],
+  "description": "A responsive grid system, based on SASS-mixins",
+  "main": "dist/T-1000.scss",
+  "keywords": [
+    "sass",
+    "responsive",
+    "grid"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "demo",
+    "src",
+    "spec"
+  ]
+}
