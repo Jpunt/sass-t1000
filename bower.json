@@ -6,7 +6,7 @@
     "Jasper Haggenburg <jasperh@q42.nl>"
   ],
   "description": "A responsive grid system, based on SASS-mixins",
-  "main": "T-1000.scss",
+  "main": "T1000.scss",
   "keywords": [
     "sass",
     "responsive",
