@@ -1,4 +1,4 @@
-sass-t-1000-grid
+sass-t1000
 ================
 
 **Yes, this is another responsive grid system.** There are a lot of them these days, but as with a lot of things, they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.
@@ -18,7 +18,7 @@ We’ve got a couple of principles that should be made clear:
 ## Mixins
 
 ### grid
-*Note: Below are some examples of how to use the grid. It's how I like to do it. If you wanna get fancy and use em-based media queries or get old-school and call the layouts “mobile” and “desktop”, knock yourself out; it's your grid. Let the content do the talking and include what's needed for that. Check the [styles](https://github.com/Jpunt/sass-t-1000-grid/blob/master/demo/stylesheets/_layout.scss) of the [demo-page](http://jpunt.github.io/sass-t-1000-grid/) for a real-life example.*
+*Note: Below are some examples of how to use the grid. It's how I like to do it. If you wanna get fancy and use em-based media queries or get old-school and call the layouts “mobile” and “desktop”, knock yourself out; it's your grid. Let the content do the talking and include what's needed for that. Check the [styles](https://github.com/Jpunt/sass-t1000/blob/master/demo/stylesheets/_layout.scss) of the [demo-page](http://jpunt.github.io/sass-t1000/) for a real-life example.*
 
 Let's start with a grid of 12 columns. And while we're at it, let's split them into a couple of layouts:
 
@@ -336,7 +336,7 @@ When you use these classes instead of specific CSS you'll notice that things get
 }
 ```
 
-`triple` and `half` are also available. In my experience, if you find yourself needing any more or less than this, there's probably something wrong with the design. If you experience a desperate need for more, [file a bug](https://github.com/Jpunt/sass-t-1000-grid/issues/new) and let me know.
+`triple` and `half` are also available. In my experience, if you find yourself needing any more or less than this, there's probably something wrong with the design. If you experience a desperate need for more, [file a bug](https://github.com/Jpunt/sass-t1000/issues/new) and let me know.
 
 
 ### properties-for-layout

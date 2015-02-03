@@ -1,4 +1,4 @@
-<h1 id="sass-t-1000-grid">sass-t-1000-grid</h1>
+<h1 id="sass-t1000">sass-t1000</h1>
 <p><strong>Yes, this is another responsive grid system.</strong> There are a lot of them these days, but as with a lot of things, they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.</p>
 <p><strong>No, this is not another responsive grid system.</strong> It’s more a library. You build the grid yourself using SASS-mixins. This way you’re free to choose the kind of media queries or number of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.</p>
 <h2 id="basics">Basics</h2>
@@ -14,7 +14,7 @@
 </ul>
 <h2 id="mixins">Mixins</h2>
 <h3 id="grid">grid</h3>
-<p><em>Note: Below are some examples of how to use the grid. It&#39;s how I like to do it. If you wanna get fancy and use em-based media queries or get old-school and call the layouts “mobile” and “desktop”, knock yourself out; it&#39;s your grid. Let the content do the talking and include what&#39;s needed for that. Check the <a href="https://github.com/Jpunt/sass-t-1000-grid/blob/master/demo/stylesheets/_layout.scss">styles</a> of the <a href="http://jpunt.github.io/sass-t-1000-grid/">demo-page</a> for a real-life example.</em></p>
+<p><em>Note: Below are some examples of how to use the grid. It&#39;s how I like to do it. If you wanna get fancy and use em-based media queries or get old-school and call the layouts “mobile” and “desktop”, knock yourself out; it&#39;s your grid. Let the content do the talking and include what&#39;s needed for that. Check the <a href="https://github.com/Jpunt/sass-t1000/blob/master/demo/stylesheets/_layout.scss">styles</a> of the <a href="http://jpunt.github.io/sass-t1000/">demo-page</a> for a real-life example.</em></p>
 <p>Let&#39;s start with a grid of 12 columns. And while we&#39;re at it, let&#39;s split them into a couple of layouts:</p>
 <pre><code class="lang-scss">@media only screen and (max-width: 399px) {
   @include grid(s, 12, 8px);
@@ -285,7 +285,7 @@
   .margin-double { margin: 20px; }
   .padding-double { padding: 20px; }
 }</code></pre>
-<p><code>triple</code> and <code>half</code> are also available. In my experience, if you find yourself needing any more or less than this, there&#39;s probably something wrong with the design. If you experience a desperate need for more, <a href="https://github.com/Jpunt/sass-t-1000-grid/issues/new">file a bug</a> and let me know.</p>
+<p><code>triple</code> and <code>half</code> are also available. In my experience, if you find yourself needing any more or less than this, there&#39;s probably something wrong with the design. If you experience a desperate need for more, <a href="https://github.com/Jpunt/sass-t1000/issues/new">file a bug</a> and let me know.</p>
 <h3 id="properties-for-layout">properties-for-layout</h3>
 <p>When you&#39;re in a situation where you only want some margin in a specific layout, use <code>properties-for-layout</code>:</p>
 <pre><code class="lang-scss">@media only screen and (max-width: 399px) {
