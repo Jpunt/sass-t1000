@@ -1,4 +1,4 @@
-sass-t1000
+T1000
 ================
 
 **Yes, this is another responsive grid system.** There are a lot of them these days, but as with a lot of things, they didn’t cut it for me. They’re either too complicated or too limited, or too difficult to get your head around.
