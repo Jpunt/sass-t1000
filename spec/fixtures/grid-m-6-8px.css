@@ -6,6 +6,10 @@
   padding: 8px;
 }
 
+.m-0 {
+  width: 0%;
+}
+
 .m-1 {
   width: 16.66667%;
 }

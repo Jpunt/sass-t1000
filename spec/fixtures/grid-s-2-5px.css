@@ -6,6 +6,10 @@
   padding: 5px;
 }
 
+.s-0 {
+  width: 0%;
+}
+
 .s-1 {
   width: 50%;
 }
