@@ -10,7 +10,7 @@ function scss(scss) {
   return sass.renderSync({
     data: "@import '../src/mixins.scss';" + scss,
     includePaths: [path.resolve(__dirname, "../src")]
-  }).normalize();
+  }).css.normalize();
 }
 
 function fixture(fileName) {
