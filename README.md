@@ -5,6 +5,18 @@ T1000
 
 **No, this is not another responsive grid system.** It’s more a library. You build the grid yourself using SASS-mixins. This way you’re free to choose the kind of media queries or number of breakpoints and sizes. And in the process you get to know your grid system as it grows with you.
 
+## Meteor
+From within your Meteor app's directory:
+```$ meteor add q42:sass-t1000```
+Create a scss.json configuration file in the app's root with:
+```
+{
+  "includePaths": [
+    ".meteor/local/build/programs/server/assets/packages/q42_sass-t1000"
+  ]
+}
+```
+
 ## Basics
 We’ve got a couple of principles that should be made clear:
 - Put content in columns
