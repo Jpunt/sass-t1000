@@ -1,6 +1,6 @@
 Package.describe({
   name: 'q42:sass-t1000',
-  version: '0.1.1',
+  version: '0.1.2',
   summary: 'A responsive grid system, based on SASS-mixins',
   git: 'git://github.com/Jpunt/sass-t1000.git',
   documentation: 'README.md'
